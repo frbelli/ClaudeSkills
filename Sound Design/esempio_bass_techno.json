@@ -1,0 +1,7 @@
+{
+  "name": "Dark_Techno_Bass",
+  "type": "bass",
+  "genre": "techno",
+  "voices": 1,
+  "characteristics": ["dark", "resonant", "aggressive", "driving"]
+}
