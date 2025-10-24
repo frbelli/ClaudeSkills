@@ -1,0 +1,42 @@
+Analisi della funzione: (x**2 - 1)/(x - 1)
+
+
+✅ Grafico salvato in: grafico_funzione.png
+======================================================================
+RISULTATI DELL'ANALISI
+======================================================================
+
+1. FUNZIONE: f(x) = (x**2 - 1)/(x - 1)
+
+2. DOMINIO: ℝ \ {x ≠ 1}
+
+3. LIMITI:
+   lim x → +∞ f(x) = oo
+   lim x → -∞ f(x) = -oo
+   lim x → 1⁻ f(x) = 2
+   lim x → 1⁺ f(x) = 2
+
+4. DERIVATA PRIMA: f'(x) = 1
+   Zeri: Nessuno
+
+5. DERIVATA SECONDA: f''(x) = 0
+   Zeri: Nessuno
+
+6. PUNTI CRITICI:
+
+7. FLESSI:
+
+8. ASINTOTI:
+   Obliqui:
+   • y = 1x + 1 (x → +∞)
+   • y = 1x + 1 (x → -∞)
+
+9. INTERSEZIONI:
+   Asse x: -1
+   Asse y: 1
+
+10. STUDIO DEL SEGNO:
+   Zeri: -1.0
+Studiare il segno negli intervalli determinati dagli zeri
+
+======================================================================
