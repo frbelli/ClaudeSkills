@@ -5,410 +5,192 @@ Maps emotional/atmospheric keywords to musical suggestions:
 - Scales and modes
 - Root key recommendations  
 - Chord progressions (3+ variations)
-- Orchestration tips
+- Production tips
 - Optional MIDI generation
+
+REFACTORED: Now uses reference_parser.py to load data from MD files
 """
 
 import sys
 import random
+from pathlib import Path
 from mido import MidiFile, MidiTrack, Message, MetaMessage, bpm2tempo
 
-# ============================================================
-# MOOD DATABASE
-# ============================================================
-
-MOOD_DATABASE = {
-    "dark": {
-        "scales": ["Phrygian", "Locrian", "Harmonic Minor", "Phrygian Dominant"],
-        "root_keys": ["D", "E", "F#", "C#", "A"],
-        "chord_progressions": [
-            {
-                "name": "Chromatic Tension",
-                "chords": ["i", "bII", "i", "bII"],
-                "feel": "Claustrophobic, tense, unsettling"
-            },
-            {
-                "name": "Phrygian Dominant",
-                "chords": ["i", "bII", "bVII", "bVI"],
-                "feel": "Middle Eastern, exotic, ominous"
-            },
-            {
-                "name": "Dark Descent",
-                "chords": ["i", "bVII", "bVI", "V"],
-                "feel": "Descending darkness, dramatic"
-            }
-        ],
-        "tips": [
-            "Use low-pass filters with slow cutoff sweeps",
-            "Add subtle dissonance with minor 2nd intervals",
-            "Employ reverb with long decay times",
-            "Layer noise textures underneath"
-        ]
-    },
-    
-    "atmospheric": {
-        "scales": ["Lydian", "Dorian", "Aeolian"],
-        "root_keys": ["C", "D", "F", "G", "A"],
-        "chord_progressions": [
-            {
-                "name": "Floating Ambiguity",
-                "chords": ["Isus2", "IVsus2", "Vsus2", "IVsus2"],
-                "feel": "Spacious, ambiguous, meditative"
-            },
-            {
-                "name": "Ethereal Jazz",
-                "chords": ["Imaj9", "VImaj7", "IVmaj9", "IImaj7"],
-                "feel": "Lush, sophisticated, dreamy"
-            },
-            {
-                "name": "Ambient Loop",
-                "chords": ["vi", "IVmaj7", "I", "V"],
-                "feel": "Nostalgic, warm, evolving"
-            }
-        ],
-        "tips": [
-            "Use slow attack envelopes (1-2 seconds)",
-            "Layer multiple detuned oscillators",
-            "Apply heavy reverb and delay",
-            "Slow LFO modulation for subtle movement"
-        ]
-    },
-    
-    "happy": {
-        "scales": ["Major (Ionian)", "Lydian", "Mixolydian"],
-        "root_keys": ["C", "G", "D", "F", "A"],
-        "chord_progressions": [
-            {
-                "name": "Pop Anthem",
-                "chords": ["I", "V", "vi", "IV"],
-                "feel": "Euphoric, sing-along, optimistic"
-            },
-            {
-                "name": "Bouncy Bright",
-                "chords": ["I", "IV", "V", "IV"],
-                "feel": "Bright, bouncy, classic"
-            },
-            {
-                "name": "Uplifting Build",
-                "chords": ["I", "III", "IV", "iv"],
-                "feel": "Complex emotions, modern"
-            }
-        ],
-        "tips": [
-            "Use bright, harmonic-rich waveforms",
-            "Fast attack envelopes for punchy sounds",
-            "Add upward pitch sweeps for excitement",
-            "Layer with major 7th chords for sophistication"
-        ]
-    },
-    
-    "sad": {
-        "scales": ["Natural Minor", "Dorian", "Aeolian"],
-        "root_keys": ["Am", "Dm", "Em", "Bm", "F#m"],
-        "chord_progressions": [
-            {
-                "name": "Sad Pop",
-                "chords": ["i", "VI", "III", "VII"],
-                "feel": "Emotional, powerful, modern sad"
-            },
-            {
-                "name": "Descending Sorrow",
-                "chords": ["i", "iv", "VII", "VI"],
-                "feel": "Melancholic, defeated"
-            },
-            {
-                "name": "Bittersweet Hope",
-                "chords": ["i", "III", "VII", "VI"],
-                "feel": "Sad but hopeful"
-            }
-        ],
-        "tips": [
-            "Use minor triads and seventh chords",
-            "Slow tempo (60-90 BPM)",
-            "Long release times on pads",
-            "Add subtle string-like textures"
-        ]
-    },
-    
-    "energetic": {
-        "scales": ["Mixolydian", "Dorian", "Major"],
-        "root_keys": ["C", "D", "E", "G", "A"],
-        "chord_progressions": [
-            {
-                "name": "Power Drive",
-                "chords": ["I", "bVII", "bVI", "bVII"],
-                "feel": "Driving, rock, powerful"
-            },
-            {
-                "name": "High Energy Build",
-                "chords": ["I", "V/VII", "vi", "IV"],
-                "feel": "Building energy, anthemic"
-            },
-            {
-                "name": "Aggressive",
-                "chords": ["i", "i", "iv", "v"],
-                "feel": "Heavy, blues-rock, groovy"
-            }
-        ],
-        "tips": [
-            "Fast tempos (128-150 BPM)",
-            "Use compression for punch",
-            "Sidechain kick to bass",
-            "Layer with syncopated rhythms"
-        ]
-    },
-    
-    "epic": {
-        "scales": ["Harmonic Minor", "Dorian", "Aeolian"],
-        "root_keys": ["Dm", "Am", "Em", "Cm"],
-        "chord_progressions": [
-            {
-                "name": "Heroic Journey",
-                "chords": ["i", "bVII", "bVI", "bVII"],
-                "feel": "Powerful, determined, heroic"
-            },
-            {
-                "name": "Cinematic Arc",
-                "chords": ["Im", "IVm", "VIImaj", "IIImaj"],
-                "feel": "Dark to light, dramatic"
-            },
-            {
-                "name": "Rising Action",
-                "chords": ["vi", "IV", "I", "V"],
-                "feel": "Building, triumphant"
-            }
-        ],
-        "tips": [
-            "Layer orchestral sounds with synths",
-            "Use crescendos and dynamic builds",
-            "Add dramatic percussion fills",
-            "Employ tempo changes for impact"
-        ]
-    },
-    
-    "dreamy": {
-        "scales": ["Lydian", "Major", "Mixolydian"],
-        "root_keys": ["C", "F", "G", "D", "A"],
-        "chord_progressions": [
-            {
-                "name": "Lydian Dream",
-                "chords": ["Imaj7", "VImaj7", "IImaj7", "Vmaj7"],
-                "feel": "Dreamy, magical, otherworldly"
-            },
-            {
-                "name": "Nostalgic Warmth",
-                "chords": ["vi", "IVmaj7", "I", "IIIm7"],
-                "feel": "Nostalgic, warm, sunset vibes"
-            },
-            {
-                "name": "Jazzy Float",
-                "chords": ["IVmaj7", "IIIm7", "VIm7", "IIm7"],
-                "feel": "Smooth, sophisticated, jazzy"
-            }
-        ],
-        "tips": [
-            "Use maj7 and add9 chords",
-            "Slow, gentle arpeggios",
-            "Lush reverb and chorus effects",
-            "Soft, filtered synth pads"
-        ]
-    },
-    
-    "mysterious": {
-        "scales": ["Locrian", "Phrygian", "Diminished"],
-        "root_keys": ["B", "E", "F#", "C#"],
-        "chord_progressions": [
-            {
-                "name": "Diminished Mystery",
-                "chords": ["vii°", "i", "bII", "V"],
-                "feel": "Unsettled, dramatic, noir"
-            },
-            {
-                "name": "Exotic Enigma",
-                "chords": ["i", "bII", "bVII", "bVI"],
-                "feel": "Middle Eastern, mysterious"
-            },
-            {
-                "name": "Suspended Question",
-                "chords": ["isus2", "IVsus2", "bVIIsus2", "Vsus4"],
-                "feel": "Ambiguous, questioning"
-            }
-        ],
-        "tips": [
-            "Use diminished and augmented chords",
-            "Add tritone intervals",
-            "Sparse, minimal arrangement",
-            "Unpredictable rhythm patterns"
-        ]
-    }
-}
+# Import reference parser
+try:
+    from reference_parser import ReferenceParser
+except ImportError:
+    # Fallback if not in same directory
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from reference_parser import ReferenceParser
 
 # ============================================================
-# SCALE DEFINITIONS (MIDI note offsets from root)
+# LOAD DATA FROM REFERENCE FILES
 # ============================================================
 
-SCALES = {
-    "Major (Ionian)": [0, 2, 4, 5, 7, 9, 11],
-    "Natural Minor (Aeolian)": [0, 2, 3, 5, 7, 8, 10],
-    "Harmonic Minor": [0, 2, 3, 5, 7, 8, 11],
-    "Dorian": [0, 2, 3, 5, 7, 9, 10],
-    "Phrygian": [0, 1, 3, 5, 7, 8, 10],
-    "Lydian": [0, 2, 4, 6, 7, 9, 11],
-    "Mixolydian": [0, 2, 4, 5, 7, 9, 10],
-    "Locrian": [0, 1, 3, 5, 6, 8, 10],
-    "Phrygian Dominant": [0, 1, 4, 5, 7, 8, 10]
-}
+# Initialize parser (loads from ../references/)
+parser = ReferenceParser()
 
-# Note names
-NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+# Load all reference data
+SCALES = parser.get_scales()
+CHORD_PROGRESSIONS = parser.get_chord_progressions()
+PRODUCTION_TIPS = parser.get_production_tips()
 
 # ============================================================
-# CHORD CONSTRUCTION
+# MOOD DATABASE BUILDER
 # ============================================================
 
-def get_chord_midi_notes(root_midi, chord_type, scale_notes):
+def get_mood_data(mood_name: str) -> dict:
     """
-    Returns MIDI notes for a chord based on root and type
+    Build mood data from reference files
+    
+    Args:
+        mood_name: Name of the mood (e.g., 'dark', 'happy')
+        
+    Returns:
+        Dictionary with scales, progressions, tips, and keys for the mood
     """
-    # Basic chord formulas (scale degrees from 0)
-    chord_formulas = {
-        "I": [0, 2, 4],          # Major triad
-        "i": [0, 2, 4],          # Minor triad (handled by scale)
-        "IV": [3, 5, 0],         # Fourth degree
-        "iv": [3, 5, 0],
-        "V": [4, 6, 1],          # Fifth degree
-        "v": [4, 6, 1],
-        "VI": [5, 0, 2],         # Sixth degree
-        "vi": [5, 0, 2],
-        "VII": [6, 1, 3],        # Seventh degree
-        "bII": [1, 3, 5],        # Flat second
-        "bVII": [5, 0, 2],       # Flat seventh
-        "bVI": [4, 6, 1],        # Flat sixth
-        "III": [2, 4, 6],        # Third
-        "iii": [2, 4, 6],
-        "Imaj7": [0, 2, 4, 6],   # Major seventh
-        "Imaj9": [0, 2, 4, 6, 1],# Major ninth
-        "Isus2": [0, 1, 4],      # Suspended second
-        "Isus4": [0, 3, 4],      # Suspended fourth
-        "IVsus2": [3, 4, 0],
-        "Vsus2": [4, 5, 1],
-        "IVmaj7": [3, 5, 0, 2],
-        "VImaj7": [5, 0, 2, 4],
+    mood_lower = mood_name.lower()
+    
+    # Get scales suitable for this mood
+    suitable_scales = []
+    for scale_name, scale_data in SCALES.items():
+        if mood_lower in scale_data.get('moods', []):
+            suitable_scales.append(scale_data['full_name'])
+    
+    # Fallback: if no scales found, use common defaults
+    if not suitable_scales:
+        default_scales = {
+            'dark': ['Phrygian', 'Locrian', 'Harmonic Minor'],
+            'happy': ['Ionian', 'Lydian', 'Mixolydian'],
+            'sad': ['Aeolian', 'Dorian', 'Phrygian'],
+            'energetic': ['Mixolydian', 'Dorian', 'Ionian'],
+            'calm': ['Ionian', 'Lydian'],
+            'atmospheric': ['Lydian', 'Dorian', 'Aeolian'],
+            'dreamy': ['Lydian', 'Ionian'],
+            'mysterious': ['Locrian', 'Phrygian Dominant', 'Diminished']
+        }
+        suitable_scales = default_scales.get(mood_lower, ['Ionian'])
+    
+    # Get chord progressions for this mood
+    progressions = CHORD_PROGRESSIONS.get(mood_lower, [])
+    
+    # Limit to top 3 progressions
+    if len(progressions) > 3:
+        progressions = progressions[:3]
+    
+    # Get production tips
+    tips = PRODUCTION_TIPS.get(mood_lower, {})
+    
+    # Combine all tips into a single list
+    all_tips = []
+    if tips:
+        for category in ['sound_design', 'arrangement', 'processing']:
+            all_tips.extend(tips.get(category, []))
+    
+    # Recommended root keys by mood
+    root_keys = {
+        'dark': ['D', 'E', 'F#', 'C#', 'A'],
+        'atmospheric': ['C', 'D', 'F', 'G', 'A'],
+        'happy': ['C', 'G', 'D', 'F', 'A'],
+        'sad': ['Am', 'Dm', 'Em', 'Bm', 'F#m'],
+        'energetic': ['C', 'D', 'E', 'G', 'A'],
+        'epic': ['Cm', 'Dm', 'Em', 'Am'],
+        'dreamy': ['C', 'G', 'F', 'D', 'A'],
+        'mysterious': ['C#', 'D#', 'F#', 'G#']
     }
     
-    # Get formula or default to triad
-    formula = chord_formulas.get(chord_type, [0, 2, 4])
-    
-    # Map to actual MIDI notes using scale
-    notes = []
-    for degree in formula:
-        if degree < len(scale_notes):
-            notes.append(scale_notes[degree])
-    
-    return notes
+    return {
+        'scales': suitable_scales,
+        'root_keys': root_keys.get(mood_lower, ['C', 'D', 'G', 'A']),
+        'chord_progressions': progressions,
+        'tips': all_tips[:4] if all_tips else []  # Top 4 tips
+    }
 
 # ============================================================
-# MAIN GENERATOR
+# NOTE/CHORD UTILITIES
 # ============================================================
 
-def generate_composition_from_mood(mood_keyword, root_note="C", generate_midi=True):
-    """
-    Main function to generate composition suggestions from mood
-    """
-    
-    # Find matching mood (case-insensitive, partial match)
-    mood_keyword = mood_keyword.lower()
-    matched_mood = None
-    
-    for mood_key in MOOD_DATABASE.keys():
-        if mood_keyword in mood_key or mood_key in mood_keyword:
-            matched_mood = mood_key
-            break
-    
-    if not matched_mood:
-        # Try to find related moods
-        mood_suggestions = list(MOOD_DATABASE.keys())
-        print(f"\n❌ Mood '{mood_keyword}' not found in database.")
-        print(f"\n💡 Available moods: {', '.join(mood_suggestions)}")
-        return
-    
-    mood_data = MOOD_DATABASE[matched_mood]
-    
-    # Select scale
-    selected_scale = random.choice(mood_data["scales"])
-    
-    # Select root key (or use provided)
-    if root_note not in NOTE_NAMES:
-        root_note = random.choice(mood_data["root_keys"])[0]
-    
-    # Get root MIDI note (middle C = 60)
-    root_midi = 60 + NOTE_NAMES.index(root_note)
-    
-    # Generate scale notes
-    scale_offsets = SCALES[selected_scale]
-    scale_notes = [root_midi + offset for offset in scale_offsets]
-    
-    # Print results
-    print("\n" + "=" * 70)
-    print(f"🎹 COMPOSITION SUGGESTIONS FOR: {matched_mood.upper()}")
-    print("=" * 70)
-    
-    print(f"\n🎼 SCALE: {root_note} {selected_scale}")
-    scale_note_names = [NOTE_NAMES[(note - 60) % 12] for note in scale_notes]
-    print(f"   Notes: {' - '.join(scale_note_names)}")
-    print(f"   MIDI: {scale_notes}")
-    
-    print(f"\n🎵 ROOT KEY: {root_note}")
-    
-    print(f"\n🎹 CHORD PROGRESSIONS:\n")
-    
-    # Generate all progressions
-    for i, prog in enumerate(mood_data["chord_progressions"], 1):
-        print(f"   Progression {i}: \"{prog['name']}\"")
-        print(f"   Chords: {' → '.join(prog['chords'])}")
-        print(f"   Feel: {prog['feel']}")
-        
-        # Show chord names
-        chord_names = []
-        for chord_symbol in prog['chords']:
-            # Simple conversion (you can make this more sophisticated)
-            if chord_symbol.startswith('I'):
-                chord_names.append(f"{root_note}{chord_symbol.replace('I', '')}")
-            elif chord_symbol.startswith('i'):
-                chord_names.append(f"{root_note}m{chord_symbol.replace('i', '')}")
-            else:
-                chord_names.append(f"{root_note}{chord_symbol}")
-        
-        print(f"   Example: {' - '.join(chord_names)}")
-        print()
-    
-    print(f"💡 PRODUCTION TIPS:")
-    for tip in mood_data["tips"]:
-        print(f"   • {tip}")
-    
-    # Generate MIDI if requested
-    if generate_midi:
-        print(f"\n🎼 Generating MIDI files...")
-        
-        for i, prog in enumerate(mood_data["chord_progressions"], 1):
-            filename = f"progression_{i}_{matched_mood}_{root_note}.mid"
-            create_progression_midi(
-                prog['chords'], 
-                scale_notes, 
-                root_midi,
-                filename,
-                bpm=100
-            )
-            print(f"   ✅ Created: {filename}")
-    
-    print("\n" + "=" * 70)
-    print("🎛️ Ready to create! Use these suggestions as starting points.")
-    print("=" * 70 + "\n")
+NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
-def create_progression_midi(chord_symbols, scale_notes, root_midi, filename, bpm=100):
+def note_name_to_midi(note: str, octave: int = 4) -> int:
+    """Convert note name to MIDI number"""
+    note = note.upper().replace('B', 'A#')  # Handle flats
+    if note not in NOTE_NAMES:
+        # Try to extract just the note letter
+        note_letter = note[0]
+        if note_letter in NOTE_NAMES:
+            note = note_letter
+        else:
+            return 60  # Default to C4
+    
+    note_index = NOTE_NAMES.index(note)
+    return note_index + (octave * 12) + 12
+
+def parse_roman_numeral(numeral: str, root_midi: int, is_minor: bool = True) -> list:
     """
-    Creates a MIDI file with the chord progression
+    Parse Roman numeral chord to MIDI notes
+    
+    Args:
+        numeral: Roman numeral (e.g., 'i', 'IV', 'bVII')
+        root_midi: MIDI number of the root note
+        is_minor: Whether we're in a minor key
+        
+    Returns:
+        List of MIDI notes for the chord
     """
+    # Scale intervals (semitones from root)
+    if is_minor:
+        scale = [0, 2, 3, 5, 7, 8, 10]  # Natural minor
+    else:
+        scale = [0, 2, 4, 5, 7, 9, 11]  # Major
+    
+    # Roman numeral to scale degree
+    roman_map = {
+        'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,
+        'i': 0, 'ii': 1, 'iii': 2, 'iv': 3, 'v': 4, 'vi': 5, 'vii': 6
+    }
+    
+    # Handle flat notation
+    if numeral.startswith('b'):
+        base_numeral = numeral[1:]
+        degree = roman_map.get(base_numeral, 0)
+        chord_root = root_midi + scale[degree] - 1  # Flat = -1 semitone
+    else:
+        degree = roman_map.get(numeral, 0)
+        chord_root = root_midi + scale[degree]
+    
+    # Build triad (root, third, fifth)
+    is_minor_chord = numeral.islower()
+    if is_minor_chord:
+        return [chord_root, chord_root + 3, chord_root + 7]  # Minor triad
+    else:
+        return [chord_root, chord_root + 4, chord_root + 7]  # Major triad
+
+# ============================================================
+# MIDI GENERATION
+# ============================================================
+
+def create_progression_midi(progression: dict, root_note: str, output_file: str, 
+                            bpm: int = 120):
+    """
+    Create a MIDI file with the chord progression
+    
+    Args:
+        progression: Progression dictionary with 'chords' list
+        root_note: Root note (e.g., 'D', 'Am')
+        output_file: Path to save MIDI file
+        bpm: Tempo in beats per minute
+    """
+    # Determine if minor key
+    is_minor = 'm' in root_note or root_note.lower() == root_note
+    
+    # Remove 'm' from note name for MIDI conversion
+    clean_note = root_note.replace('m', '').replace('M', '')
+    root_midi = note_name_to_midi(clean_note, octave=3)
+    
+    # Create MIDI file
     mid = MidiFile()
     track = MidiTrack()
     mid.tracks.append(track)
@@ -416,56 +198,107 @@ def create_progression_midi(chord_symbols, scale_notes, root_midi, filename, bpm
     # Set tempo
     track.append(MetaMessage('set_tempo', tempo=bpm2tempo(bpm)))
     
-    # Timing
-    ticks_per_beat = 480
-    whole_note = ticks_per_beat * 4
+    # Add each chord
+    ticks_per_beat = mid.ticks_per_beat
+    chord_duration = ticks_per_beat * 4  # 4 beats per chord
     
-    # Generate chords
-    time_elapsed = 0
-    
-    for chord_symbol in chord_symbols:
-        # Get MIDI notes for chord
-        chord_notes = get_chord_midi_notes(root_midi, chord_symbol, scale_notes)
+    for chord_numeral in progression['chords']:
+        # Parse chord
+        chord_notes = parse_roman_numeral(chord_numeral, root_midi, is_minor)
         
-        # Note on events
+        # Note on
+        for note in chord_notes:
+            track.append(Message('note_on', note=note, velocity=80, time=0))
+        
+        # Note off (after duration)
         for i, note in enumerate(chord_notes):
-            delta = 0 if i > 0 else 0
-            track.append(Message('note_on', note=note, velocity=80, time=delta))
-        
-        # Hold for whole note
-        time_elapsed += whole_note
-        
-        # Note off events
-        for i, note in enumerate(chord_notes):
-            delta = whole_note if i == 0 else 0
-            track.append(Message('note_off', note=note, velocity=0, time=delta))
+            time = chord_duration if i == 0 else 0
+            track.append(Message('note_off', note=note, velocity=0, time=time))
     
-    # Save
-    mid.save(filename)
+    # Save MIDI file
+    mid.save(output_file)
+    print(f"💾 MIDI file saved: {output_file}")
+
+# ============================================================
+# MAIN INTERFACE
+# ============================================================
+
+def display_mood_suggestions(mood: str, root_key: str = None, 
+                             generate_midi: bool = False):
+    """
+    Display composition suggestions for a given mood
+    
+    Args:
+        mood: Mood name (e.g., 'dark', 'happy')
+        root_key: Optional root key (e.g., 'D', 'Am')
+        generate_midi: Whether to generate MIDI files
+    """
+    print("=" * 70)
+    print(f"🎵 MOOD TO COMPOSITION: {mood.upper()}")
+    print("=" * 70)
+    
+    # Get mood data
+    mood_data = get_mood_data(mood)
+    
+    if not mood_data['scales'] and not mood_data['chord_progressions']:
+        print(f"\n❌ Mood '{mood}' not found in database.")
+        print(f"Available moods: {', '.join(CHORD_PROGRESSIONS.keys())}")
+        return
+    
+    # Select or suggest root key
+    if not root_key:
+        root_key = random.choice(mood_data['root_keys'])
+        print(f"\n🎹 Suggested Root Key: {root_key}")
+    else:
+        print(f"\n🎹 Root Key: {root_key}")
+    
+    # Display scales
+    print(f"\n📊 RECOMMENDED SCALES:")
+    for i, scale in enumerate(mood_data['scales'], 1):
+        print(f"   {i}. {scale}")
+    
+    # Display chord progressions
+    if mood_data['chord_progressions']:
+        print(f"\n🎼 CHORD PROGRESSIONS:")
+        for i, prog in enumerate(mood_data['chord_progressions'], 1):
+            print(f"\n   {i}. {prog.get('name', 'Progression ' + str(i))}")
+            print(f"      Chords: {' - '.join(prog['chords'])}")
+            if 'example' in prog:
+                print(f"      Example: {prog['example']}")
+            print(f"      Feel: {prog.get('feel', 'N/A')}")
+            
+            # Generate MIDI if requested
+            if generate_midi:
+                filename = f"progression_{i}_{mood}_{root_key}.mid"
+                create_progression_midi(prog, root_key, filename)
+    
+    # Display production tips
+    if mood_data['tips']:
+        print(f"\n💡 PRODUCTION TIPS:")
+        for i, tip in enumerate(mood_data['tips'], 1):
+            print(f"   {i}. {tip}")
+    
+    print("\n" + "=" * 70)
 
 # ============================================================
 # CLI INTERFACE
 # ============================================================
 
-if __name__ == "__main__":
+def main():
+    """Main CLI interface"""
     if len(sys.argv) < 2:
-        print("\n🎹 MOOD TO COMPOSITION GENERATOR")
-        print("=" * 70)
-        print("\nUsage: python mood_to_composition.py <mood> [root_note]")
-        print("\nExamples:")
-        print("  python mood_to_composition.py dark")
-        print("  python mood_to_composition.py atmospheric D")
-        print("  python mood_to_composition.py 'dark atmospheric' C#")
+        print("Usage: python mood_to_composition.py <mood> [root_key] [--midi]")
         print("\nAvailable moods:")
-        for mood in MOOD_DATABASE.keys():
-            print(f"  • {mood}")
-        print("\nCombine moods with spaces: 'dark atmospheric', 'sad dreamy', etc.")
-        print("=" * 70 + "\n")
-        sys.exit(0)
+        for mood in sorted(CHORD_PROGRESSIONS.keys()):
+            print(f"  - {mood}")
+        print("\nExample: python mood_to_composition.py dark D --midi")
+        sys.exit(1)
     
-    # Parse arguments
-    mood = sys.argv[1]
-    root = sys.argv[2] if len(sys.argv) > 2 else "C"
+    mood = sys.argv[1].lower()
+    root_key = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith('--') else None
+    generate_midi = '--midi' in sys.argv
     
-    # Generate
-    generate_composition_from_mood(mood, root, generate_midi=True)
+    display_mood_suggestions(mood, root_key, generate_midi)
+
+if __name__ == "__main__":
+    main()

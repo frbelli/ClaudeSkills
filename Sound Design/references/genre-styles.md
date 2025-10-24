@@ -1489,3 +1489,216 @@ Difficulty: Intermediate
 ---
 
 **End of Genre Styles Database**
+
+---
+
+## 🎯 STYLE VARIATIONS BY GENRE
+
+### Techno Style Variations
+
+#### Driving (Berlin/Hard Techno)
+- **BPM**: 135-145
+- **Character**: Relentless, industrial, hypnotic
+- **Bass**: Heavy, repetitive, minimal melodic movement
+- **Kick**: Distorted, aggressive, dominant
+- **Use**: Peak-time sets, warehouse raves, maximum energy
+- **Reference**: Amelie Lens, Charlotte de Witte, I Hate Models
+
+#### Hypnotic (Minimal Techno)
+- **BPM**: 125-135
+- **Character**: Subtle, evolving, trance-inducing
+- **Bass**: Locked groove, repetitive with micro-variations
+- **Kick**: Clean, deep, consistent
+- **Use**: After-hours, intimate club sets, meditative dancing
+- **Reference**: Ricardo Villalobos, Richie Hawtin, Robert Hood
+
+#### Industrial (Dark/Hard Techno)
+- **BPM**: 130-150
+- **Character**: Aggressive, distorted, raw, metallic
+- **Bass**: Dissonant, heavily processed, tritones
+- **Kick**: Hard, clipped, saturated
+- **Use**: Underground raves, extreme sets, noise-influenced
+- **Reference**: Regis, Surgeon, Ancient Methods
+
+#### Dub Techno
+- **BPM**: 120-130
+- **Character**: Deep, spacious, atmospheric, echoing
+- **Bass**: Sub-heavy, sparse, delay-drenched
+- **Kick**: Deep, resonant, space between
+- **Use**: Chill rooms, ambient techno sets, introspective
+- **Reference**: Basic Channel, Deepchord, Rod Modell
+
+---
+
+### House Style Variations
+
+#### Funky (Disco House)
+- **BPM**: 118-128
+- **Character**: Groovy, danceable, uplifting, nostalgic
+- **Bass**: Walking, funky, 16th note ghost notes
+- **Drums**: Disco-influenced, live drum feel
+- **Use**: Peak-time dance floor, feel-good vibes
+- **Reference**: Dimitri From Paris, Purple Disco Machine
+
+#### Soulful (Soulful House)
+- **BPM**: 120-128
+- **Character**: Emotional, vocal-driven, uplifting
+- **Bass**: Melodic, chord-tone walking
+- **Vocals**: Gospel-influenced, powerful, emotional
+- **Use**: Peak emotional moments, uplifting energy
+- **Reference**: Louie Vega, Joe Claussell, Tony Humphries
+
+#### Tech House
+- **BPM**: 125-130
+- **Character**: Groovy, tech-influenced, syncopated
+- **Bass**: Syncopated, funky, minimal melodic content
+- **Tech Elements**: Techno-style FX, industrial sounds
+- **Use**: Peak-time club sets, energetic dance floor
+- **Reference**: Green Velvet, Fisher, Patrick Topping
+
+---
+
+### Dubstep Style Variations
+
+#### Brostep (Aggressive)
+- **BPM**: 140 (70 feel)
+- **Character**: Aggressive, metallic, transformer sounds
+- **Bass**: Heavy wobbles, LFO-modulated, distorted
+- **Drops**: Massive, full-frequency assault
+- **Use**: Festival main stages, maximum energy
+- **Reference**: Skrillex, Excision, Zomboy
+
+#### Deep Dubstep (Original)
+- **BPM**: 138-142 (69-71 feel)
+- **Character**: Dark, minimal, sub-focused, spacious
+- **Bass**: Sub-bass emphasis, less mid-range aggression
+- **Space**: Lots of silence, sparse arrangement
+- **Use**: Underground dubstep nights, bass purists
+- **Reference**: Mala, Coki, Burial
+
+#### Riddim
+- **BPM**: 140-150
+- **Character**: Repetitive, hypnotic, simple patterns
+- **Bass**: Very repetitive wobbles, minimal variation
+- **Pattern**: Simple 4-bar loops, crowd call-response
+- **Use**: Headbanger sets, mosh pits
+- **Reference**: Subtronics, Virtual Riot, Phiso
+
+---
+
+### Drum & Bass Style Variations
+
+#### Neurofunk
+- **BPM**: 170-180
+- **Character**: Technical, complex, aggressive, sci-fi
+- **Bass**: Reese bass, heavily processed, intricate
+- **Drums**: Tight, technical, fast edits
+- **Use**: Peak-time DnB sets, technical showcase
+- **Reference**: Noisia, Phace, Mefjus
+
+#### Liquid (Liquid Funk)
+- **BPM**: 170-176
+- **Character**: Smooth, melodic, musical, atmospheric
+- **Bass**: Melodic, jazzy, chord-following
+- **Vocals**: Often featured, soulful, uplifting
+- **Use**: Warm-up, emotional moments, musicality
+- **Reference**: Calibre, Netsky, High Contrast
+
+#### Jump-Up
+- **BPM**: 170-176
+- **Character**: Fun, bouncy, energetic, party-focused
+- **Bass**: Wobbling, reggae-influenced, catchy
+- **Drops**: Simple, effective, crowd-pleasing
+- **Use**: Peak energy, party atmosphere
+- **Reference**: DJ Hazard, Original Sin, Taxman
+
+#### Jungle
+- **BPM**: 160-170
+- **Character**: Breakbeat-heavy, reggae-influenced, raw
+- **Bass**: Sub-bass, reggae sound system influence
+- **Breaks**: Amen break, chopped drums, complex
+- **Use**: Old-school vibes, breakbeat focus
+- **Reference**: Goldie, Roni Size, LTJ Bukem
+
+---
+
+### Trap Style Variations
+
+#### Festival Trap
+- **BPM**: 140-150
+- **Character**: High-energy, big drops, crowd-focused
+- **808**: Long, sliding, distorted
+- **Horns**: Brass hits, orchestral stabs
+- **Use**: Festival main stages, maximum energy
+- **Reference**: RL Grime, Baauer, Flosstradamus
+
+#### Lo-Fi Trap
+- **BPM**: 130-150
+- **Character**: Chill, downtempo, vinyl crackle
+- **808**: Clean, melodic, subtle
+- **Texture**: Lo-fi processing, tape warble
+- **Use**: Background music, studying, relaxing
+- **Reference**: Jinsang, SwuM, Tomppabeats
+
+#### Hybrid Trap
+- **BPM**: 140-160
+- **Character**: Dubstep + Trap fusion, heavy
+- **808**: Wobbling like dubstep bass
+- **Drums**: Trap hi-hat patterns + dubstep energy
+- **Use**: Bass music sets, festival sets
+- **Reference**: Ekali, NGHTMRE, Slander
+
+---
+
+### Trance Style Variations
+
+#### Uplifting (Anthem Trance)
+- **BPM**: 136-142
+- **Character**: Euphoric, emotional, anthem-driven
+- **Bass**: Simple root-fifth, supportive
+- **Melody**: Soaring leads, emotional chord progressions
+- **Use**: Peak emotional moments, hands-in-air
+- **Reference**: Armin van Buuren, Ferry Corsten, Above & Beyond
+
+#### Progressive Trance
+- **BPM**: 128-136
+- **Character**: Building, evolving, journey-focused
+- **Bass**: Rolling, hypnotic, evolving
+- **Structure**: Long builds, gradual changes
+- **Use**: Long DJ sets, journey-telling
+- **Reference**: John Digweed, Hernan Cattaneo, Guy J
+
+#### Psytrance
+- **BPM**: 135-145
+- **Character**: Psychedelic, hypnotic, tribal
+- **Bass**: Rolling, driving, constantly moving
+- **FX**: Trippy, psychedelic, nature sounds
+- **Use**: Psytrance parties, outdoor festivals
+- **Reference**: Infected Mushroom, Astrix, Vini Vici
+
+#### Goa Trance
+- **BPM**: 138-147
+- **Character**: Spiritual, eastern-influenced, layered
+- **Bass**: Hypnotic, 303-style, acidic
+- **Melodies**: Eastern scales, complex layering
+- **Use**: Goa parties, spiritual gatherings
+- **Reference**: Hallucinogen, Juno Reactor, Astral Projection
+
+---
+
+## 📊 STYLE VARIATION SUMMARY TABLE
+
+| Genre | Main Styles | BPM Range | Key Characteristics |
+|-------|-------------|-----------|---------------------|
+| **Techno** | Driving, Hypnotic, Industrial, Dub | 120-150 | Repetitive, hypnotic, 4/4 |
+| **House** | Deep, Funky, Soulful, Tech | 118-130 | Groovy, soulful, 4/4 |
+| **Dubstep** | Brostep, Deep, Riddim | 138-150 (70 feel) | Wobble bass, half-time |
+| **DnB** | Neurofunk, Liquid, Jump-Up, Jungle | 160-180 | Fast breaks, rolling bass |
+| **Trap** | Festival, Lo-Fi, Hybrid | 130-160 | 808s, hi-hat rolls |
+| **Trance** | Uplifting, Progressive, Psy, Goa | 128-147 | Builds, euphoric, melodic |
+
+---
+
+**Last Updated**: October 2024  
+**Version**: 3.0 (Complete with Style Variations)  
+**Part of**: Sound Design Skill - Reference Database
