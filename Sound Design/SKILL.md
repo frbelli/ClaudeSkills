@@ -16,13 +16,16 @@ Professional skill for sound design on hardware and software synthesizers. Suppo
 ## Supported Synthesizers
 
 ### Hardware
-- Elektron Digitone II
+- **Elektron Digitone II** [📖 Complete Guide](references/synths/digitone-ii.md)
 - Moog Matriarch, DFAM, Subharmonicon
 - Behringer Crave
 - Make Noise 0-Coast
 
 ### Software
 - Vital, Serum, Massive X, Diva, Arturia Pigments 6
+
+**Note**: Detailed synth documentation available in `references/synths/` directory. Currently available:
+- `digitone-ii.md` - Complete reference from official manual (OS 1.00A)
 
 ## Supported Genres
 Techno, IDM, Ambient/Drone, Synthwave, Dubstep, Trap/Hip-Hop, Psytrance, Industrial/EBM, House, Vintage/Analog

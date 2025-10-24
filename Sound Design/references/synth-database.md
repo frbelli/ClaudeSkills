@@ -8,56 +8,56 @@ Complete reference for all supported hardware and software synthesizers. This da
 
 ### Elektron Digitone II
 
-- **Type**: Digital 8-voice FM synthesizer with subtractive capabilities
-- **Synthesis**: 4-operator FM with algorithms + subtractive filter
-- **Voices**: 8-voice polyphonic (can be split across 4 tracks)
-- **Operators**: 4 operators per voice with multiple algorithms
-- **Filter**: Analog-modeled multimode filter (LP/HP/BP/Notch) with overdrive
-- **Envelopes**: Multiple envelopes per operator + filter/amp envelopes
-- **LFO**: Multiple LFOs per track with various waveforms
-- **Effects**: Chorus, delay, reverb, overdrive (per track + master)
-- **Sequencer**: 64-step sequencer with parameter locks, micro-timing, trig conditions
-- **Arpeggiator**: Advanced arpeggiator with multiple modes
-- **Keyboard**: None (step sequencer based, MIDI input)
-- **Parameter Locks**: Lock any parameter per step
-- **Specialties**:
-  - Powerful 4-op FM synthesis
-  - Parameter locks for per-step sound design
-  - Subtractive filter adds warmth to digital FM
-  - Pattern chaining and song mode
-  - Overbridge integration
-  - MIDI tracks for controlling external gear
+**📖 Complete Documentation**: See [synths/digitone-ii.md](synths/digitone-ii.md)
 
-**Programming Interface**:
-- Menu-based with dedicated encoders
-- OLED screen for visual feedback
-- Trig buttons for step programming
-- Parameter locks accessible per step
-- Steep learning curve but very deep
+**Quick Reference**:
+- **Type**: Digital 8-voice FM synthesizer with subtractive filtering
+- **Operators**: 4 operators (Groups: C, A, B1, B2)
+- **Algorithms**: 8 routing configurations with X/Y outputs
+- **Voices**: 8-voice polyphony across 4 tracks
+- **Filter**: Analog-modeled multimode (multiple filter machines available)
+- **Sequencer**: 64-step with parameter locks, micro-timing
+- **Effects**: Per-track (Chorus, Delay, Reverb, Overdrive) + Master
+
+**Key Features**:
+- Unique FM + Subtractive hybrid architecture
+- Parameter locks for per-step sound design (most powerful feature)
+- 8 algorithms with dual carrier outputs (X/Y crossfade)
+- Bipolar HARM parameter (wavetable-like harmonic control)
+- Operator envelopes: ADE (triggered) or ASDE (gated)
+- Overbridge integration for DAW control
 
 **Best For**:
-- FM bass (punchy, metallic, growling)
-- Bell sounds and keys (classic FM territory)
-- Percussion (kicks, snares, hi-hats via FM)
-- Evolving pads (with parameter locks)
-- Plucks and mallets
-- Complex rhythmic patterns (sequencer strength)
-- Live performance (pattern chaining)
+- Dark techno (aggressive FM bass and leads)
+- Percussive sounds (kicks, snares, bells via FM)
+- Evolving pads (parameter locks + effects)
+- Complex sequenced patterns
+- Live performance (pattern chaining, scenes)
 
-**Programming Tips**:
-- Start with simple 2-operator patches, add complexity
-- Use subtractive filter to tame harsh FM timbres
-- Parameter lock filter cutoff for evolving sounds
-- Ratio tuning: Integer ratios = harmonic, decimal = inharmonic
-- Algorithm selection dramatically changes character
-- Use LFO on operator levels for tremolo/movement
-- Feedback on operators creates aggressive timbres
+**Quick Start Tips**:
+- **Start simple**: Algorithm 1 (series) with 2 operators
+- **Use the filter**: LP 24dB to tame harsh FM
+- **Parameter locks**: Evolve static sounds over time
+- **Integer ratios**: 1, 2, 3, 4 for harmonic sounds
+- **Decimal ratios**: 1.37, 2.51 for metallic timbres
+- **Feedback**: Adds aggression and harmonics
+- **MIX parameter**: Crossfade between X/Y outputs
 
-**Limitations**:
-- No built-in keyboard (external MIDI controller needed)
-- FM can be harsh without careful programming
-- Limited to 4 operators (compared to 6-op FM synths)
-- Menu diving required for deep parameters
+**Common Patches**:
+- **Techno Kick**: Algorithm 1, Ratio C=1.0, Fast pitch envelope, LP filter
+- **Reese Bass**: Algorithm 5 (parallel), Detuning, High resonance
+- **FM Lead**: Algorithm 3 or 7, Feedback ON, Ratio 3-7, BP filter
+- **Pad**: Algorithm 5, Slow attacks, Chorus + Reverb
+- **Bell**: Algorithm 2, Integer ratios, Fast decay
+
+**Documentation Note**: The complete reference includes:
+- Detailed algorithm diagrams (all 8 configurations)
+- Operator envelope types and behaviors
+- Ratio system (including B1/B2 "clock" behavior)
+- Harmonics parameter deep dive
+- Filter machines comparison
+- Sound design strategies by genre
+- All information verified from official Digitone II manual (OS 1.00A)
 
 ---
 
