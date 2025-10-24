@@ -1,0 +1,121 @@
+# Sound Design Skill Configuration
+# Version 2.0
+
+[skill]
+name = sound-design
+version = 2.0
+author = Claude AI
+description = Complete music production skill with sound design, music theory, composition, and analysis
+language = python
+min_python_version = 3.10
+
+[paths]
+root = /mnt/skills/user/sound-design
+scripts = scripts/
+references = references/
+docs = docs/
+examples = examples/
+
+[dependencies]
+python_packages = mido
+external_tools = 
+
+[features]
+sound_design = true
+music_theory = true
+composition = true
+harmonic_analysis = true
+rhythm_generation = true
+melody_generation = true
+signal_flow_diagrams = true
+
+[synths.hardware]
+moog_matriarch = true
+elektron_digitone_ii = true
+moog_dfam = true
+moog_subharmonicon = true
+behringer_crave = true
+make_noise_0coast = true
+
+[synths.software]
+vital = true
+serum = true
+massive_x = true
+diva = true
+arturia_pigments_6 = true
+
+[databases]
+music_theory = references/music-theory.md
+chord_progressions = references/chord-progressions.md
+scales_modes = references/scales-modes.md
+synth_database = references/synth-database.md
+sound_archetypes = references/sound-archetypes.md
+genre_styles = references/genre-styles.md
+
+[scripts]
+mood_to_composition = scripts/mood_to_composition.py
+analyze_harmony = scripts/analyze_harmony.py
+generate_melody = scripts/generate_melody.py
+
+[mood_database]
+dark = true
+atmospheric = true
+happy = true
+sad = true
+energetic = true
+epic = true
+dreamy = true
+mysterious = true
+
+[scales_supported]
+count = 14
+major_modes = 7
+minor_scales = 3
+pentatonic = 2
+exotic = 2
+
+[chord_types_supported]
+count = 15
+triads = 4
+suspended = 2
+seventh = 3
+extended = 6
+
+[output_formats]
+midi = true
+json = true
+svg = true
+markdown = true
+vital_preset = true
+
+[analysis]
+key_detection_algorithm = krumhansl-schmuckler
+confidence_threshold = 0.60
+min_notes_for_analysis = 8
+
+[defaults]
+bpm = 120
+beats_per_measure = 4
+beats_per_chord = 4
+default_root_key = C
+default_mode = major
+
+[documentation]
+master_summary = docs/MASTER_SUMMARY.md
+quick_start = docs/quick_start_guide.md
+integration = docs/integration_instructions.md
+expansion = docs/skill_expansion_guide.md
+harmonic_analysis = docs/analyze_harmony_documentation.md
+
+[examples]
+midi_progressions = examples/*.mid
+vital_presets = examples/*.vital
+signal_flows = examples/*.svg
+
+[changelog]
+v2.0 = Added harmonic analysis, melody generation, expanded databases
+v1.0 = Initial release with sound design and composition tools
+
+[contact]
+support = See docs/ for troubleshooting
+contribute = See docs/skill_expansion_guide.md
