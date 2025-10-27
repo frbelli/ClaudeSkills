@@ -141,129 +141,560 @@ Line Types:
 
 ### The 8 Algorithms
 
-**Algorithm 1**: Series Chain
+# Algorithm 1 - Dual Path FM con Feedback
+
+## Spiegazione
+
+L'**Algorithm 1** del Digitone II è una configurazione di sintesi FM a 4 operatori con doppio percorso parallelo e feedback.
+
+### Struttura
+
+**Percorso A (con feedback):**
+- **Operatore A** modula se stesso (feedback loop) e poi modula l'operatore **C**
+- Il feedback su A crea armoniche complesse e timbri più ricchi
+
+**Percorso B:**
+- **Operatore B²** modula **B¹**, che a sua volta modula **C**
+- Questa catena permette modulazioni più complesse e stratificate
+
+**Carrier finale:**
+- **Operatore C** riceve modulazione sia da A che da B¹
+- C è il carrier principale che produce l'output udibile su **X**
+
+### Output
+- **X**: Output principale del carrier C (linea tratteggiata = envelope-controlled)
+- **Y**: Output ausiliario da B¹ (linea tratteggiata = envelope-controlled)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- Suoni metallici e percussivi (grazie al feedback su A)
+- Timbri complessi con armoniche ricche
+- Pad e texture evolute
+- Bass con carattere e movimento
+
+Il feedback su A aggiunge instabilità controllata, mentre la doppia modulazione su C offre grande versatilità timbrica.
+
+```dot
+digraph G { 
+rankdir=TB; 
+node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24]; edge [color=black]; 
+A [label="A"]; 
+B2 [label="B²"]; 
+B1 [label="B¹"]; 
+C [label="C"]; 
+X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20]; 
+Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20]; 
+// Connessioni solide 
+A -> C; 
+B2 -> B1; 
+B1 -> C; 
+// Feedback su A 
+A -> A [constraint=false]; 
+// Connessioni tratteggiate 
+C -> X [style=dashed]; 
+B1 -> Y [style=dashed]; 
+// Layout 
+{rank=same; A; B2} 
+}
 ```
-    B²
-     │ (modulates)
-    B¹
-     │ (modulates)
-     A
-     │ (modulates)
-     C
-    ─┴─
-    X Y
+
+
+# Algorithm 2 - Dual Carrier con Feedback su B²
+
+## Spiegazione
+
+L'**Algorithm 2** del Digitone II è una configurazione a doppio carrier indipendente con feedback su B².
+
+### Struttura
+
+**Percorso A (semplice):**
+
+- **Operatore A** modula direttamente **C**
+- Modulazione lineare senza feedback, per timbri più puliti e controllati
+
+**Percorso B (con feedback):**
+
+- **Operatore B²** modula se stesso (feedback loop) e poi modula **B¹**
+- Il feedback su B² aggiunge complessità armonica e instabilità controllata
+
+**Carrier duali:**
+
+- **C** e **B¹** sono entrambi carrier indipendenti
+- Non si modulano a vicenda, creando due voci timbriche separate
+
+### Output
+
+- **X**: Output principale del carrier C (linea tratteggiata = envelope-controlled)
+- **Y**: Output indipendente dal carrier B¹ (linea tratteggiata = envelope-controlled)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Split sounds** con due timbri distinti (uno pulito da A→C, uno complesso da B²→B¹)
+- **Layer di texture** con caratteri diversi
+- **Bass + lead** simultanei con timbri complementari
+- **Suoni percussivi duali** (kick + snare, hi-hat + clap)
+
+La separazione dei due percorsi offre grande flessibilità nel mixaggio, mentre il feedback su B² permette di aggiungere aggressività e carattere al secondo timbro mantenendo il primo più pulito.
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
     
-• Classic FM stacking
-• Maximum harmonic complexity
-• All operators in series
-```
-
-**Algorithm 2**: Parallel Carriers + Modulated Carrier
-```
-    B²        B¹
-     │         │
-     A    ┌────┘
-     │    │
-     C    │
-    ─┴────┴─
-    X     Y
+    A [label="A"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    C [label="C"];
     
-• Two independent outputs
-• B1 modulates A
-• B2 modulates itself
-• Good for crossfading timbres
-```
-
-**Algorithm 3**: Dual Modulators on Single Carrier
-```
-    B²   B¹
-     │   │
-     └─┬─┘
-       A
-       │
-       C
-      ─┴─
-      X Y
-      
-• Both B operators modulate A
-• Complex modulation
-• Rich harmonics
-```
-
-**Algorithm 4**: Parallel Paths with Shared Modulator
-```
-    B²
-     │
-    ┌┴┐
-    A B¹
-    │ │
-    C │
-   ─┴─┴─
-   X   Y
-   
-• Two carrier outputs (C and B1)
-• B2 modulates both A and B1
-• Independent timbres on X and Y
-```
-
-**Algorithm 5**: Parallel (All Carriers)
-```
-    B²  B¹  A   C
-     │   │  │   │
-    ─┴───┴──┴───┴─
-    X           Y
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
     
-• All operators are carriers
-• No FM modulation between operators
-• Additive-style synthesis
-• Detuning creates thickness
-```
-
-**Algorithm 6**: Split Chain
-```
-    B²  B¹
-     │   │
-     A   C
-     │   │
-    ─┴───┴─
-    X     Y
+    // Connessioni solide
+    A -> C;
+    B2 -> B1;
     
-• Two independent chains
-• B2→A on X output
-• B1→C on Y output
-• Different timbres per output
+    // Feedback su B2
+    B2 -> B2 [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    B1 -> Y [style=dashed];
+    
+    // Layout
+    {rank=same; A; B2}
+}
 ```
 
-**Algorithm 7**: Feedback Modulator
-```
-    ┌─┐
-    │ B²  B¹
-    │  │   │
-    └─→A   C
-       │   │
-      ─┴───┴─
-      X     Y
-      
-• B2 has self-feedback
-• B2 modulates A
-• B1 modulates C
-• Aggressive harmonics from feedback
+# Algorithm 3 - Multi-Modulator con Feedback
+
+## Spiegazione
+
+L'**Algorithm 3** del Digitone II è una configurazione con un singolo modulatore che controlla tutti gli altri operatori, arricchito da feedback.
+
+### Struttura
+
+**Operatore A (master modulator con feedback):**
+
+- **Operatore A** modula se stesso (feedback loop) per armoniche complesse
+- A modula contemporaneamente **C**, **B²** e **B¹**
+- È il cuore dell'algoritmo, controllando l'intero timbro
+
+**Carrier multipli:**
+
+- **C** e **B²** sono carrier che convergono sull'output **X**
+- **B¹** è un carrier indipendente che va all'output **Y**
+- Nessun operatore modula gli altri oltre ad A
+
+### Output
+
+- **X**: Output combinato di C e B² (entrambi modulati da A)
+- **Y**: Output indipendente di B¹ (modulato da A)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Timbri uniformemente complessi** dove tutti gli operatori condividono la stessa sorgente di modulazione
+- **Pad evolutivi** con texture coerenti
+- **Droni armonici** ricchi e stratificati
+- **Suoni metallici sincronizzati** dove il feedback su A aggiunge brillantezza
+- **Lead monofonici** con carattere aggressivo
+
+Il feedback su A garantisce che tutta la complessità armonica sia distribuita uniformemente su tutti i carrier, creando timbri densi ma coerenti. La separazione tra output X (doppio carrier) e Y (singolo) offre possibilità di mixaggio interessanti.
+
+```dot
+digraph G { 
+rankdir=TB; 
+node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24]; 
+edge [color=black]; 
+A [label="A"]; 
+C [label="C"];
+B2 [label="B²"]; 
+B1 [label="B¹"];  
+X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20]; 
+Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20]; 
+// Connessioni solide 
+A -> C; 
+A -> B2; 
+A -> B1; 
+// Feedback su A 
+A -> A [constraint=false]; 
+// Connessioni tratteggiate 
+C -> X [style=dashed]; 
+B2 -> X [style=dashed]; 
+B1 -> Y [style=dashed]; 
+}
 ```
 
-**Algorithm 8**: Complex Routing
+
+# Algorithm 4 - Catena Sequenziale con Feedback
+
+## Spiegazione
+
+L'**Algorithm 4** del Digitone II è una configurazione a catena lineare dove ogni operatore modula il successivo, con feedback all'inizio della catena.
+
+### Struttura
+
+**Catena di modulazione completa:**
+
+- **Operatore B²** modula se stesso (feedback loop) e avvia la catena
+- **B²** → **B¹** → **A** → **C**
+- Ogni operatore amplifica e trasforma la modulazione del precedente
+- Modulazione "a cascata" per timbri estremamente complessi
+
+**Carrier principale:**
+
+- **C** è il carrier finale che riceve tutta la modulazione accumulata
+- **A** funge da carrier intermedio con output separato
+
+### Output
+
+- **X**: Output principale del carrier finale C (modulazione massima)
+- **Y**: Output ausiliario dal carrier intermedio A (modulazione parziale)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Timbri molto complessi e densi** con armoniche stratificate
+- **Suoni evoluti e imprevedibili** grazie alla catena completa
+- **Bass profondi e distorti** con il feedback su B²
+- **Lead aggressivi** con saturazione armonica
+- **Effetti sonori** e texture sperimentali
+- **Pad drammatici** con grande profondità
+
+Il feedback su B² all'inizio della catena crea instabilità che si propaga attraverso tutti gli operatori, risultando in timbri ricchissimi ma potenzialmente caotici. L'output Y da A permette di monitorare uno stadio intermedio della modulazione, offrendo interessanti possibilità di layering tra suono "parziale" e "completo".
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
+    
+    A [label="A"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    C [label="C"];
+    
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    
+    // Connessioni solide
+    B2 -> B1;
+    B1 -> A;
+    A -> C;
+    
+    // Feedback su B2
+    B2 -> B2 [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    A -> Y [style=dashed];
+}
 ```
-        B²
-         │
-    ┌────┼────┐
-    A    B¹   C
-    │    │    │
-   ─┴────┴────┴─
-   X          Y
-   
-• B2 modulates all three operators
-• Most complex routing
-• Maximum modulation possibilities
-• Three carrier outputs
+
+
+# Algorithm 5 - Doppia Modulazione con Feedback
+
+## Spiegazione
+
+L'**Algorithm 5** del Digitone II è una configurazione con doppio percorso di modulazione convergente, con feedback su B¹.
+
+### Struttura
+
+**Operatore B¹ (sorgente con feedback):**
+
+- **Operatore B¹** modula se stesso (feedback loop) per armoniche complesse
+- B¹ modula sia **B²** che direttamente **A**
+- Crea due percorsi paralleli di modulazione dalla stessa sorgente
+
+**Doppio percorso convergente:**
+
+- **Percorso diretto**: B¹ → A
+- **Percorso indiretto**: B¹ → B² → A
+- Entrambi i percorsi convergono su **A**, che poi modula il carrier finale **C**
+
+**Carrier principale:**
+
+- **C** riceve la modulazione combinata e produce l'output principale
+- **A** funge anche da carrier intermedio con output separato
+
+### Output
+
+- **X**: Output principale del carrier C (modulazione completa e stratificata)
+- **Y**: Output ausiliario dal carrier intermedio A (mix dei due percorsi)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Timbri ricchi con interferenze** create dai due percorsi paralleli
+- **Lead espressivi** con dinamica complessa
+- **Bass con movimento** grazie alla doppia modulazione
+- **Pad densi e corposi** con battimenti armonici
+- **Suoni percussivi articolati** (snare, toms con corpo)
+- **Texture evolute** con sfumature continue
+
+Il feedback su B¹ alla sorgente garantisce complessità che si propaga attraverso entrambi i percorsi. La convergenza su A crea interferenze e battimenti tra le due catene di modulazione, risultando in timbri particolarmente ricchi e dinamici. L'output Y permette di ascoltare il punto di convergenza prima del carrier finale.
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
+    
+    A [label="A"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    C [label="C"];
+    
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    
+    // Connessioni solide
+    B1 -> B2;
+    B2 -> A;
+    B1 -> A;
+    A -> C;
+    
+    // Feedback su B1
+    B1 -> B1 [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    A -> Y [style=dashed];
+}
+```
+
+
+
+# Algorithm 6 - Parallelo Simmetrico con Feedback
+
+## Spiegazione
+
+L'**Algorithm 6** del Digitone II è una configurazione perfettamente simmetrica dove due modulatori paralleli controllano gli stessi carrier, con feedback su A.
+
+### Struttura
+
+**Modulatori paralleli:**
+
+- **Operatore A** modula se stesso (feedback loop) e poi modula sia **B¹** che **C**
+- **Operatore B²** modula gli stessi target: **B¹** e **C**
+- Architettura simmetrica e bilanciata
+
+**Carrier duali con doppia modulazione:**
+
+- **C** riceve modulazione da entrambi A e B²
+- **B¹** riceve modulazione da entrambi A e B²
+- Ogni carrier ha caratteristiche timbriche identiche ma produce output separati
+
+### Output
+
+- **X**: Output dal carrier C (doppia modulazione da A e B²)
+- **Y**: Output dal carrier B¹ (doppia modulazione da A e B²)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Split stereo** con timbri identici ma mixabili separatamente
+- **Unisono ricco** combinando X e Y per spessore
+- **Pad larghi e corposi** con doppio layer
+- **Lead potenti** con presenza stereo
+- **Rhodes/EP elettrici** con carattere vintage
+- **Bells e mallets** con risonanza naturale
+- **Dual voice arrangements** dove X e Y suonano note diverse
+
+Il feedback su A aggiunge complessità armonica al primo modulatore, creando una leggera asimmetria timbrica tra i due modulatori che arricchisce il suono. La perfetta simmetria delle connessioni permette di ottenere due voci praticamente identiche ma controllabili indipendentemente in fase di mix, ideale per creare spazialità e profondità.
+
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
+    
+    A [label="A"];
+    C [label="C"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    
+    // Connessioni solide
+    A -> B1;
+    A -> C;
+    B2 -> B1;
+    B2 -> C;
+    
+    // Feedback su A
+    A -> A [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    B1 -> Y [style=dashed];
+    
+    // Layout
+    {rank=same; A; B2}
+}
+```
+
+
+
+# Algorithm 7 - Dual Path con Output Misti
+
+## Spiegazione
+
+L'**Algorithm 7** del Digitone II è una configurazione a doppio percorso indipendente dove modulatori e carrier si mescolano direttamente agli output.
+
+### Struttura
+
+**Percorso A (con feedback):**
+
+- **Operatore A** modula se stesso (feedback loop)
+- A modula il carrier **C**
+- A va anche direttamente all'output **X** (connessione solida = sempre attivo)
+
+**Percorso B:**
+
+- **Operatore B²** modula il carrier **B¹**
+- B² va anche direttamente all'output **Y** (connessione solida = sempre attivo)
+
+**Mix agli output:**
+
+- **X** riceve sia A (diretto) che C (modulato da A)
+- **Y** riceve sia B² (diretto) che B¹ (modulato da B²)
+
+### Output
+
+- **X**: Mix di modulatore A + carrier C (linea tratteggiata da C = envelope-controlled)
+- **Y**: Mix di modulatore B² + carrier B¹ (linea tratteggiata da B¹ = envelope-controlled)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Timbri ibridi** che combinano modulatore e carrier
+- **Suoni metallici brillanti** con presenza del modulatore
+- **Bass con sub** (modulatore = sub, carrier = armoniche)
+- **Lead cutting** con edge aggressivo
+- **Percussion complesse** con transiente + risonanza
+- **Noise + tone** combinations per effetti speciali
+- **Dual-layer sounds** con caratteri complementari
+
+Il feedback su A arricchisce il percorso sinistro, mentre la presenza diretta dei modulatori A e B² negli output crea timbri particolarmente brillanti e aggressivi. Questa configurazione è unica perché permette di bilanciare la "purezza" del modulatore con la complessità del carrier modulato, offrendo grande versatilità timbrica attraverso il controllo degli envelope.
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
+    
+    A [label="A"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    C [label="C"];
+    
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    
+    // Connessioni solide
+    A -> C;
+    B2 -> B1;
+    A -> X;
+    B2 -> Y;
+    
+    // Feedback su A
+    A -> A [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    B1 -> Y [style=dashed];
+    
+    // Layout
+    {rank=same; A; B2}
+}
+```
+
+
+# Algorithm 8 - Tri-Carrier Indipendente
+
+## Spiegazione
+
+L'**Algorithm 8** del Digitone II è una configurazione minimalista con tre carrier quasi completamente indipendenti e un singolo percorso di modulazione.
+
+### Struttura
+
+**Percorso modulato:**
+
+- **Operatore A** modula il carrier **C**
+- C produce output su **X** (linea tratteggiata = envelope-controlled)
+
+**Carrier diretti:**
+
+- **Operatore B²** va direttamente all'output **X** (connessione solida = sempre attivo)
+- **Operatore B¹** modula se stesso (feedback loop) e va all'output **Y** (connessione solida = sempre attivo)
+
+**Architettura ibrida:**
+
+- **X** riceve sia B² (diretto) che C (modulato da A)
+- **Y** riceve solo B¹ (con feedback su se stesso)
+- Tre "voci" essenzialmente indipendenti
+
+### Output
+
+- **X**: Mix di carrier diretto B² + carrier modulato C
+- **Y**: Carrier B¹ con feedback (completamente indipendente)
+
+### Utilizzo tipico
+
+Questo algoritmo è ideale per:
+
+- **Three-voice layering** con controllo individuale
+- **Bass + mid + high splits** per suoni stratificati
+- **Kick + bass combinations** (B¹ = kick con feedback, A→C = bass, B² = sub o high)
+- **Additive-style synthesis** con tre sorgenti quasi pure
+- **Organi elettrici** con drawbars virtuali
+- **Pad semplici ma ricchi** con tre layer sottili
+- **Minimalismo timbrico** con massima separazione
+
+Il feedback su B¹ lo rende il carrier più complesso armonicamente, mentre B² rimane completamente puro e A→C offre modulazione FM tradizionale. Questo algoritmo è perfetto quando si desidera massima indipendenza tra gli operatori, permettendo di costruire timbri additivi o layer completamente separati. È l'algoritmo più "aperto" e flessibile per sound design creativo.
+
+
+```dot
+digraph G {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=black, fontcolor=white, width=0.8, height=0.8, fontname="Helvetica", fontsize=24];
+    edge [color=black];
+    
+    A [label="A"];
+    B2 [label="B²"];
+    B1 [label="B¹"];
+    C [label="C"];
+    
+    X [shape=circle, label="X", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    Y [shape=circle, label="Y", fillcolor=white, fontcolor=black, fontname="Helvetica", fontsize=20];
+    
+    // Connessioni solide
+    A -> C;
+    B2 -> X;
+    B1 -> Y;
+    
+    // Feedback su B1
+    B1 -> B1 [constraint=false];
+    
+    // Connessioni tratteggiate
+    C -> X [style=dashed];
+    
+    // Layout
+    {rank=same; A; B2}
+}
 ```
 
 ---
