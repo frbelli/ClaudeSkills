@@ -317,44 +317,46 @@ Complete reference for all supported hardware and software synthesizers. This da
 - Small patch bay (18 points vs Matriarch's 90)
 
 ---
-
 ### Make Noise 0-Coast
 
-- **Type**: Single-voice patchable synthesizer (West Coast philosophy)
-- **Oscillator**: 1 digital/analog hybrid oscillator
-- **Waveshaper**: Overtone generator for additive/subtractive synthesis
-- **Filter**: No traditional filter (uses wavefolding/timbre)
+**📖 Complete Documentation**: See [synths/Make-Noise-0-Coast-Complete-Reference.md](synths/Make-Noise-0-Coast-Complete-Reference)
+
+- **Type**: Semi-modular single-voice synthesizer (West Coast architecture)
+- **Oscillator**: 1 analog oscillator with sine and square outputs
+- **Waveshaping**: Overtone generator and Multiply section (wavefolder)
+- **Filter**: None (timbre shaping via wavefolding and dynamic control)
 - **Voices**: Monophonic
-- **Envelopes**: Contour generator (loopable)
+- **Envelopes**: Contour (AD) and Slope (function generator / LFO)
+- **Modulation**: CV-controllable Rise/Fall, Overtone, Multiply, and Dynamics
+- **Patchbay**: 27 points (13 outputs, 14 inputs)
 - **LFO**: Contour can function as LFO
-- **Modulation**: Multiply section for complex modulation
-- **Patchbay**: Banana jack patchbay
-- **CV/Gate**: 1V/oct input, gate input
+- **MIDI**: MIDI to CV/Gate converter with assignable CC Program Pages
 - **Specialties**:
-  - West Coast synthesis (wavefolding, not filtering)
-  - No keyboard (CV/Gate controlled)
-  - Experimental/noise-friendly
-  - Unique sound character
+  - Combines East-Coast and West-Coast synthesis principles
+  - Fully patchable with Eurorack compatibility
+  - Self-generating patch capability (Krell-style)
+  - Unique wavefolding timbres instead of traditional filtering
+  - Velocity, Mod Wheel, and Aftertouch assignable via MIDI CC
 
 **Programming Interface**:
-- Knob-based with banana jack patching
-- No traditional keyboard
-- Experimental workflow
+- Knob-per-function layout
+- Clear signal flow: `OSC → OVERTONE → MULTIPLY → DYNAMICS → BALANCE → LINE OUT`
+- Patch points break internal normalizations
+- MIDI and analog control coexist seamlessly
 
 **Best For**:
-- Experimental sounds
-- Noise and texture
-- West Coast synthesis exploration
-- Modular integration
-- Sound design (not traditional musical playing)
-- Drones and evolving timbres
-
+- Experimental modular textures  
+- Evolving drones and generative sequences  
+- Basslines and rhythmic FM tones  
+- External signal processing (acts as filter/VCA/wavefolder)  
+- West-Coast sound design exploration  
+- 
 **Programming Tips**:
 - Explore wavefolding (Balance control)
 - Use Multiply section for complex modulation
 - Patch Contour to multiple destinations
 - Self-patching creates feedback loops
-
+- 
 **Limitations**:
 - Monophonic
 - No keyboard

@@ -9,11 +9,12 @@ This directory contains detailed, manual-verified documentation for each support
 Each synthesizer has its own dedicated markdown file with comprehensive information extracted from official manuals and specifications.
 
 ```
-synths/
-├── README.md (this file)
-├── Elektron-Digitone-II-Complete-Reference.md
-├── Moog-Matriarch–Full Reference-Guide.md
-├── vital.md (coming soon)
+synths/  
+├── README.md (this file)  
+├── Elektron-Digitone-II-Complete-Reference.md  
+├── Moog-Matriarch-Complete-Reference.md  
+├── Make-Noise-0-Coast-Complete-Reference.md  
+├── vital.md (coming soon)  
 └── ...
 ```
 
@@ -51,6 +52,21 @@ synths/
 - Example patches (“Stereo Drone”, “Percussive Sequence”) with visual routing  
 
 > Verified from Moog’s official manual and cross-checked with hardware unit behavior.
+
+### [[Make-Noise-0-Coast-Complete-Reference.md]]
+**Make Noise 0-Coast** – Complete Reference  
+**Source:** Make Noise 0-Coast Manual (Rev. 2018)  
+**Status:** ✅ Complete and verified  
+
+**Includes:**
+- Full architecture following the panel layout (OSC, Overtone, Multiply, Dynamics, Contour, Slope, Balance, MIDI I/O)  
+- Detailed patchbay table with voltage ranges and signal behavior  
+- MIDI to CV implementation and all Program Pages (CC 102–109)  
+- Complete list of CV/gate ranges and Eurorack interoperability notes  
+- Signal flow and patch diagrams (Mermaid format)  
+- Example patches (“Simple Bass”, “Krell Patch”, “Wobble Bass”, “External Processor”) with modular schematics  
+
+> Based on Make Noise official manual and confirmed through hardware testing.
 
 ---
 
@@ -195,6 +211,7 @@ When adding a new synthesizer reference:
 |-------|--------|---------------|--------------|
 | Digitone II | ✅ Complete | OS 1.00A (Oct 2024) | Oct 2024 |
 | Moog Matriarch | ✅ Complete | Rev. 2020 | Oct 2025 |
+| Make Noise 0-Coast | ✅ Complete | Rev. 2018 | Oct 2025 |
 | Vital | 🔜 Planned | - | - |
 | Serum | 🔜 Planned | - | - |
 | Massive X | 🔜 Planned | - | - |
@@ -203,7 +220,6 @@ When adding a new synthesizer reference:
 | DFAM | 🔜 Planned | - | - |
 | Subharmonicon | 🔜 Planned | - | - |
 | Crave | 🔜 Planned | - | - |
-| 0-Coast | 🔜 Planned | - | - |
 
 ---
 

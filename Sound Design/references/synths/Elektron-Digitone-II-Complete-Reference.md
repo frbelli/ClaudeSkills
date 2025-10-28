@@ -53,7 +53,8 @@ Before operating the Elektron Digitone II, carefully read these safety instructi
 - Do not expose the unit to moisture, direct sunlight, or heat sources.
 - Avoid placing heavy objects on the power cable.
 
-> Warning: Using third-party power supplies may cause permanent damage to the unit or create electrical hazards.
+> [!WARNING]
+> > Warning: Using third-party power supplies may cause permanent damage to the unit or create electrical hazards.
 
 ### Handling and Placement
 - Operate the unit on a stable surface with adequate ventilation.
@@ -110,7 +111,8 @@ It was designed to make FM synthesis accessible, musical, and deeply programmabl
 | Overbridge | Limited | Full multi-channel audio |
 | Hardware | USB-B | USB-C, redesigned encoders |
 
-> Tip: Digitone II’s architecture bridges the clarity of analog subtractive synthesis with the richness of FM, encouraging exploration without requiring traditional operator theory.
+> [!TIP]
+> > Tip: Digitone II’s architecture bridges the clarity of analog subtractive synthesis with the richness of FM, encouraging exploration without requiring traditional operator theory.
 
 ---
 
@@ -137,7 +139,8 @@ grouped sections for **synthesis**, **sequencing**, **effects**, and **navigatio
 | **[TEMPO], [CHAIN], [SONG]** | Global performance and arrangement functions |
 | **[FUNC] + [TRIG] Combos** | Access microtiming, conditional trigs, and parameter locks |
 
-> Tip: Pressing and holding [FUNC] temporarily reveals available shortcuts on the OLED display.
+> [!TIP]
+> > Tip: Pressing and holding [FUNC] temporarily reveals available shortcuts on the OLED display.
 
 ### Display and Indicators
 - **OLED Screen:** Shows contextual parameters and active page.
@@ -168,10 +171,6 @@ This introductory block ensures your reference covers:
 Continue with your existing section **“Introduction”**, which now naturally follows this material.
 
 ---
-
-
----
-
 ## Introduction
 Digitone II is an eight-voice digital FM synthesizer with subtractive filtering and an Elektron-style sequencer.  
 It expands on the original Digitone by introducing deeper sound design tools, improved routing, additional filter types, and extended connectivity for both studio and stage.
@@ -1400,7 +1399,8 @@ Press [FUNC] + [AMP] → select *VOICE SETUP*.
 | **VOICE LOCK** | OFF / ON | Locks a note to a specific voice (for consistency) |
 | **VOICE STEAL** | OFF / ON | Allows older notes to be replaced when all voices are used |
 
-> Tip: enable *UNISON 2* or *3* for chorused leads or pads; *VOICE LOCK* ensures stable stereo imaging in layered patches.
+> [!TIP]
+> > Tip: enable *UNISON 2* or *3* for chorused leads or pads; *VOICE LOCK* ensures stable stereo imaging in layered patches.
 
 ---
 
@@ -1425,7 +1425,8 @@ Offsets any trig up to ±23 microsteps.
 - Hold [TRIG] + press [LEFT]/[RIGHT] or use encoder A.  
 - Useful for humanizing drum hits or creating flams.
 
-> Tip: combine micro-timing with retrig for shuffle-style swing.
+> [!TIP]
+> > Tip: combine micro-timing with retrig for shuffle-style swing.
 
 ### Fill Mode
 Temporarily activates trigs with condition “FILL”.
@@ -1442,16 +1443,17 @@ Digitone II keeps a temporary snapshot of every pattern.
 | Temp Reload | [FUNC] + [NO] | Reverts to last saved state |
 | Full Save | [FUNC] + [SAVE PROJECT] | Commits to memory |
 
-> Tip: perfect for live performance—experiment freely, then revert instantly.
+> [!TIP]
+> > Tip: perfect for live performance—experiment freely, then revert instantly.
 
 ### Scale Menu
 Controls pattern length, per-track scaling, and swing.
 
-| Parameter | Description |
-|------------|-------------|
-| **LENGTH** | Total steps (1 – 64) |
-| **SCALE** | Step-rate multiplier per track |
-| **SWING** | Groove amount (0–80 %) |
+| Parameter     | Description                                       |
+| ------------- | ------------------------------------------------- |
+| **LENGTH**    | Total steps (1 – 64)                              |
+| **SCALE**     | Step-rate multiplier per track                    |
+| **SWING**     | Groove amount (0–80 %)                            |
 | **PER-TRACK** | Enables independent scales for polymeter patterns |
 
 Access: [FUNC] + [SCALE].  
@@ -1475,7 +1477,8 @@ Each row in the Song corresponds to one playback event — a pattern, its length
 - Press [FUNC] + [SONG] to toggle between **Pattern Mode** and **Song Mode**.  
 - Use [UP]/[DOWN] to move between rows.
 
-> Tip: Song Mode stores its data per project. Each project can hold one complete song arrangement.
+> [!TIP]
+> > Tip: Song Mode stores its data per project. Each project can hold one complete song arrangement.
 
 ---
 
@@ -1495,7 +1498,8 @@ Each row contains several columns controlling playback:
 - The currently playing row is highlighted.  
 - The END row can be moved or edited like any other row.
 
-> Tip: Rows can contain different tempos and track mutes, allowing smooth transitions between sections (verse, chorus, etc.).
+> [!TIP]
+> > Tip: Rows can contain different tempos and track mutes, allowing smooth transitions between sections (verse, chorus, etc.).
 
 ---
 
@@ -1515,7 +1519,8 @@ Each row contains several columns controlling playback:
 - Editing is non-destructive until you overwrite or clear a row.  
 - Patterns referenced by the Song remain independent — edits to patterns update automatically when reloaded.
 
-> Tip: Building a Song from an existing pattern chain is the fastest workflow for live sets.
+> [!TIP]
+> > Tip: Building a Song from an existing pattern chain is the fastest workflow for live sets.
 
 ---
 
@@ -1535,7 +1540,9 @@ Each row contains several columns controlling playback:
 - Tempo and mutes for each row are recalled at the start of playback.  
 - You can manually switch to Pattern Mode to improvise without losing the Song structure.
 
-> Tip: Edits made during playback are stored automatically; saving the Project preserves the current Song layout.
+> [!TIP]
+> > Tip: Edits made during playback are stored automatically; saving the Project preserves the current Song layout.
+> 
 
 ---
 
@@ -1564,7 +1571,8 @@ Holds data saved with each project.
 
 Access: [FUNC] + [PROJECT] → *SETTINGS*.
 
-> Tip: Saving the project also saves associated patterns and sound assignments.
+> [!TIP]
+> > Tip: Saving the project also saves associated patterns and sound assignments.
 
 ### System Menu
 Applies globally to all projects.
@@ -1579,7 +1587,8 @@ Applies globally to all projects.
 | **Calibration** | Encoder and display alignment |
 | **Firmware Update** | Load OS via USB or SysEx |
 
-> Warning: Do not disconnect power during firmware update.
+> [!WARNING]
+> > Warning: Do not disconnect power during firmware update.
 
 ### Project Manager
 Lists all stored projects, available slots, and memory usage.  
@@ -1598,7 +1607,8 @@ The Startup Menu is accessed by holding [FUNC] while powering on.
 | **FACTORY RESET** | Restores factory projects and sounds |
 | **OS UPGRADE** | Waits for new firmware via USB / SysEx |
 
-> Tip: Use *Empty Reset* before transferring large sound banks or firmware to ensure stable memory allocation.
+> [!TIP]
+> > Tip: Use *Empty Reset* before transferring large sound banks or firmware to ensure stable memory allocation.
 
 ---
 
@@ -1619,7 +1629,8 @@ The Startup Menu is accessed by holding [FUNC] while powering on.
 - Drum machine receives sync and transport.  
 - Use Fill Mode and Temporary Reload for variation control.
 
-> Tip: Overbridge users can record all eight audio channels plus stereo FX returns for full multitrack sessions.
+> [!TIP]
+> > Tip: Overbridge users can record all eight audio channels plus stereo FX returns for full multitrack sessions.
 
 ---
 ## Performance Features
@@ -1802,7 +1813,8 @@ Access: [FUNC] + [GLOBAL] → *MIDI CONFIG*
 | **LOCAL CONTROL** | When OFF, disconnects physical controls from sound engine (useful for DAW). |
 | **RECEIVE NOTES / CC / PC** | Individual toggles for Note, Control Change, and Program Change messages. |
 
-> Tip: For integration with a DAW via Overbridge, disable “LOCAL CONTROL” and “PARAM OUT” to avoid MIDI loops.
+> [!TIP]
+> > Tip: For integration with a DAW via Overbridge, disable “LOCAL CONTROL” and “PARAM OUT” to avoid MIDI loops.
 
 ---
 
@@ -2080,7 +2092,8 @@ Feedback
 | **PAGE 4 (Filter/Amp)** | **FREQ / RES / ENV DEPTH** | Post-FM filter section |
 | | **AMP ENV A/D/S/R** | Amplitude envelope parameters |
 
-> Tip: To emulate analog kicks, set RATIO B = 0.5, FDBK ≈ 40, STIM ≈ 20, and increase BODY ENV Decay for resonance.
+> [!TIP]
+> > Tip: To emulate analog kicks, set RATIO B = 0.5, FDBK ≈ 40, STIM ≈ 20, and increase BODY ENV Decay for resonance.
 
 ---
 
@@ -2105,7 +2118,8 @@ Two FM operators feeding a morphing wavetable oscillator; suitable for pads, bel
 | **AMP ENV A/D/S/R** | Amplitude envelope |
 | **LFO DESTINATION** | Assignable modulation to Index or Shape |
 
-> Tip: For lush evolving pads, modulate “WAVETONE INDEX” with a slow triangle LFO and use LP4 filter with moderate resonance.
+> [!TIP]
+> > Tip: For lush evolving pads, modulate “WAVETONE INDEX” with a slow triangle LFO and use LP4 filter with moderate resonance.
 
 ---
 
@@ -2118,7 +2132,8 @@ To select a machine:
 
 Machines are stored per track and saved within the sound preset.
 
-> Note: Switching machines resets parameters to their default state; save before changing to prevent data loss.
+> [!NOTE]
+> > Note: Switching machines resets parameters to their default state; save before changing to prevent data loss.
 
 ---
 ## Extended Appendix
@@ -2134,7 +2149,8 @@ Machines are stored per track and saved within the sound preset.
 | **WIDTH** | 0–127 | Stereo spread; 0 = mono |
 | **MIX** | 0–127 | Dry/wet balance |
 
-> Tip: small depth (10–30) produces analog-style widening; large depth yields detuned ensemble sounds.
+> [!TIP]
+> > Tip: small depth (10–30) produces analog-style widening; large depth yields detuned ensemble sounds.
 
 #### Delay
 | Parameter | Range | Description |
@@ -2146,7 +2162,8 @@ Machines are stored per track and saved within the sound preset.
 | **SEND TO REV** | OFF/ON | Routes delay output into reverb input |
 | **MIX** | 0–127 | Dry/wet balance |
 
-> Tip: use short time + high feedback for metallic flanging; long times for dub-style echoes.
+> [!TIP]
+> > Tip: use short time + high feedback for metallic flanging; long times for dub-style echoes.
 
 #### Reverb
 | Parameter | Range | Description |
@@ -2185,7 +2202,8 @@ Machines are stored per track and saved within the sound preset.
 | **MAKEUP GAIN** | 0–127 | Output gain compensation |
 | **SIDECHAIN** | OFF/ON | Enables kick-ducking or external trigger |
 
-> Tip: gentle ratios (2:1) tighten the mix; extreme ratios add pumping dynamics.
+> [!TIP]
+> > Tip: gentle ratios (2:1) tighten the mix; extreme ratios add pumping dynamics.
 
 ---
 
@@ -2215,7 +2233,8 @@ Each track contains one LFO assignable to nearly any parameter.
 | **ONE-SHOT** | Executes once per trig |
 | **FREE / TRIG / ONE-SHOT** | Playback modes controlling retriggering |
 
-> Tip: use slow triangle to animate filter sweeps; fast sine for vibrato.
+> [!TIP]
+> > Tip: use slow triangle to animate filter sweeps; fast sine for vibrato.
 
 ---
 
@@ -2235,7 +2254,8 @@ Digitone II includes several pre-defined scales accessible from the *Note* page.
 | **Octaves** | 2 | Root + octave intervals only |
 | **User** | custom | Defined via *NOTE PAGE > SCALE EDIT* |
 
-> Tip: assign different scales to each track for interlocking harmonic layers.
+> [!TIP]
+> > Tip: assign different scales to each track for interlocking harmonic layers.
 
 ---
 
@@ -2282,7 +2302,8 @@ Digitone II includes several pre-defined scales accessible from the *Note* page.
 - Periodically recalibrate encoders under **SYSTEM > CALIBRATION**.  
 - For firmware updates, use Elektron Transfer or Overbridge utility.
 
-> Warning: performing unofficial modifications or opening the chassis voids warranty.
+> [!WARNING]
+> > Warning: performing unofficial modifications or opening the chassis voids warranty.
 
 ---
 

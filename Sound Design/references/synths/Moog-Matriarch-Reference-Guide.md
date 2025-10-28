@@ -24,7 +24,8 @@ Before operating the Moog Matriarch, review the following safety notes to ensure
 - Confirm that your local mains voltage matches the adapter rating.  
 - Disconnect the power supply before connecting external devices to the patchbay.
 
-> Warning: Use of third-party adapters may damage the analog circuitry or introduce hum due to improper grounding.
+> [!WARNING]
+> > Warning: Use of third-party adapters may damage the analog circuitry or introduce hum due to improper grounding.
 
 ### Operating Environment
 - Temperature: 0–35 °C (32–95 °F).  
@@ -101,7 +102,8 @@ The Matriarch can operate:
 - **Paraphonically** (up to 4-note chords sharing the same filter/VCA).  
 - **Semi-modularly** via patchbay rerouting.
 
-> Tip: Use the patchbay to separate the oscillators into independent voices, or to insert external modules into the signal path.
+> [!TIP]
+> > Tip: Use the patchbay to separate the oscillators into independent voices, or to insert external modules into the signal path.
 
 ---
 
@@ -119,7 +121,8 @@ The Matriarch can operate:
 | **POWER IN** | 12 V DC, 2 A | Power connector (center positive) |
 | **POWER SWITCH** | Toggle | Turns unit on/off |
 
-> Tip: Use the PRE-DELAY OUT when you want to record the dry signal while monitoring the stereo delay output.
+> [!TIP]
+> > Tip: Use the PRE-DELAY OUT when you want to record the dry signal while monitoring the stereo delay output.
 
 ---
 
@@ -139,13 +142,15 @@ The **Oscillator section (VCO 1–4)** is the primary sound source of the Matria
 | **PW / PWM** | 0–10 | Pulse width control or modulation depth |
 | **MIXER LEVEL** | 0–10 | Signal level into mixer |
 
-> Tip: For thick unison sounds, slightly detune oscillators 2–4 by ±2 semitones.
+> [!TIP]
+> > Tip: For thick unison sounds, slightly detune oscillators 2–4 by ±2 semitones.
 
 ### Paraphonic Behavior
 In **4-note paraphonic mode**, each oscillator tracks one key.  
 All oscillators share the same filter and amplifier envelope, producing a layered yet harmonically distinct sound.
 
-> Note: Oscillator sync and FM affect each voice differently depending on trigger order in paraphonic mode.
+> [!NOTE]
+> > Note: Oscillator sync and FM affect each voice differently depending on trigger order in paraphonic mode.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -156,7 +161,8 @@ All oscillators share the same filter and amplifier envelope, producing a layere
 | **SYNC IN** | CV | Hard-sync trigger input |
 | **PWM IN** | CV | External modulation of pulse width |
 
-> Tip: Patch “VCO MIX OUT” directly to “DELAY IN” to bypass the filter for bright FM textures.
+> [!TIP]
+> > Tip: Patch “VCO MIX OUT” directly to “DELAY IN” to bypass the filter for bright FM textures.
 
 ---
 
@@ -178,7 +184,8 @@ The **Mixer** combines signals from the oscillators and external input before ro
 - When multiple oscillators are at full level, the filter input may saturate, adding mild Moog-style overdrive.  
 - The external input passes through the same gain stage and can modulate or replace the oscillator mix.
 
-> Tip: Overdriving the filter by increasing oscillator levels yields the characteristic Moog growl.
+> [!TIP]
+> > Tip: Overdriving the filter by increasing oscillator levels yields the characteristic Moog growl.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -208,7 +215,8 @@ The **Filter** is a stereo Moog Ladder Filter operating in parallel or series co
 - In **series mode**, the output of Filter A feeds Filter B, resulting in sharper roll-off.  
 - The envelope amount determines how much the filter responds dynamically to each keypress.
 
-> Tip: Try using 50% keyboard tracking with medium resonance for natural brightness across octaves.
+> [!TIP]
+> > Tip: Try using 50% keyboard tracking with medium resonance for natural brightness across octaves.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -219,7 +227,8 @@ The **Filter** is a stereo Moog Ladder Filter operating in parallel or series co
 | **FILTER ENV OUT** | CV | Envelope output signal |
 | **POST FILTER OUT L/R** | Audio | Output after filtering |
 
-> Note: Routing “POST FILTER OUT” back into “AUDIO IN” creates a feedback path for aggressive timbres.
+> [!NOTE]
+> > Note: Routing “POST FILTER OUT” back into “AUDIO IN” creates a feedback path for aggressive timbres.
 
 ---
 
@@ -245,7 +254,8 @@ The **VCA** controls the overall loudness contour of the Matriarch’s signal pa
 | **AMP ENV OUT** | CV | Sends envelope signal for external modulation |
 | **AMP ENV GATE IN** | Gate | Triggers envelope externally |
 
-> Tip: In “ON” mode, the VCA remains open, ideal for drone patches or modular processing.
+> [!TIP]
+> > Tip: In “ON” mode, the VCA remains open, ideal for drone patches or modular processing.
 
 ---
 ## 8. Modulation Section
@@ -264,7 +274,8 @@ Together they provide complex modulation for filter, pitch, amplitude, and exter
 
 LFO may modulate oscillator pitch, filter cutoff, or amplitude simultaneously depending on patch configuration.
 
-> Tip: At high rates the LFO can reach the audio range, producing metallic FM-like textures when patched to VCO Pitch In.
+> [!TIP]
+> > Tip: At high rates the LFO can reach the audio range, producing metallic FM-like textures when patched to VCO Pitch In.
 
 **Patch Points**
 
@@ -297,7 +308,8 @@ Both can be routed freely through the patchbay.
 | **AMP ENV OUT** | CV | Sends amplifier envelope to patchbay |
 | **ENV GATE IN** | Gate | External trigger for either envelope |
 
-> Tip: Route the filter envelope to oscillator pitch for expressive attack bends.
+> [!TIP]
+> > Tip: Route the filter envelope to oscillator pitch for expressive attack bends.
 
 ---
 
@@ -324,7 +336,8 @@ A dual BBD (Bucket-Brigade Device) analog delay capable of stereo ping-pong or d
 | **FB CV IN L/R** | CV | Controls feedback via CV |
 | **MIX CV IN** | CV | Modulates wet/dry mix |
 
-> Tip: Modulate TIME CV IN with the LFO for vintage tape-style chorusing.
+> [!TIP]
+> > Tip: Modulate TIME CV IN with the LFO for vintage tape-style chorusing.
 
 ---
 
@@ -350,7 +363,8 @@ Unpatched, it behaves as a traditional synth; patching overrides or extends the 
 - Keyboard CV → Oscillator Pitch  
 Breaking any connection with a patch cable reroutes the signal to the new destination.
 
-> Tip: Use the built-in mults to distribute modulation to multiple points without an external splitter.
+> [!TIP]
+> > Tip: Use the built-in mults to distribute modulation to multiple points without an external splitter.
 
 ---
 
@@ -374,8 +388,10 @@ A 49-key Fatar keyboard with velocity and aftertouch transmits both MIDI and CV.
 | **VEL OUT** | CV | Velocity voltage |
 | **AT OUT** | CV | Aftertouch output |
 | **GLIDE CV IN** | CV | Modulates glide time |
+|--------------|------|-------------|
 
-> Tip: Patch VEL OUT → FILTER CV IN for dynamic touch-responsive brightness.
+> [!TIP]
+> > Tip: Patch VEL OUT → FILTER CV IN for dynamic touch-responsive brightness.
 
 ---
 
@@ -401,7 +417,8 @@ Matriarch features a 256-step sequencer and an independent arpeggiator sharing t
 3. Press [PLAY] to exit recording and start playback.  
 4. [FUNC]+[PLAY] transposes the sequence by played key.
 
-> Tip: Use external clock from modular gear to sync multiple analog sequencers.
+> [!TIP]
+> > Tip: Use external clock from modular gear to sync multiple analog sequencers.
 
 ---
 
@@ -420,7 +437,8 @@ Matriarch features a 256-step sequencer and an independent arpeggiator sharing t
 - Engage **LATCH** to sustain without holding keys.  
 - Sync to external clock for tempo-locked patterns.
 
-> Tip: Combine arpeggiator with paraphonic mode for chord-driven rhythmic textures.
+> [!TIP]
+> > Tip: Combine arpeggiator with paraphonic mode for chord-driven rhythmic textures.
 
 ---
 
@@ -458,7 +476,8 @@ Matriarch supports full MIDI over USB and DIN.
 | **CC 73** | Attack |
 | **CC 72** | Release |
 
-> Tip: Matriarch’s MIDI Out mirrors CV Pitch and Gate data, allowing it to drive external synths without additional converters.
+> [!TIP]
+> > Tip: Matriarch’s MIDI Out mirrors CV Pitch and Gate data, allowing it to drive external synths without additional converters.
 
 ---
 
