@@ -25,7 +25,7 @@ Before operating the Moog Matriarch, review the following safety notes to ensure
 - Disconnect the power supply before connecting external devices to the patchbay.
 
 > [!WARNING]
-> > Warning: Use of third-party adapters may damage the analog circuitry or introduce hum due to improper grounding.
+> Warning: Use of third-party adapters may damage the analog circuitry or introduce hum due to improper grounding.
 
 ### Operating Environment
 - Temperature: 0–35 °C (32–95 °F).  
@@ -103,7 +103,7 @@ The Matriarch can operate:
 - **Semi-modularly** via patchbay rerouting.
 
 > [!TIP]
-> > Tip: Use the patchbay to separate the oscillators into independent voices, or to insert external modules into the signal path.
+> Use the patchbay to separate the oscillators into independent voices, or to insert external modules into the signal path.
 
 ---
 
@@ -122,7 +122,7 @@ The Matriarch can operate:
 | **POWER SWITCH** | Toggle | Turns unit on/off |
 
 > [!TIP]
-> > Tip: Use the PRE-DELAY OUT when you want to record the dry signal while monitoring the stereo delay output.
+> Use the PRE-DELAY OUT when you want to record the dry signal while monitoring the stereo delay output.
 
 ---
 
@@ -143,14 +143,29 @@ The **Oscillator section (VCO 1–4)** is the primary sound source of the Matria
 | **MIXER LEVEL** | 0–10 | Signal level into mixer |
 
 > [!TIP]
-> > Tip: For thick unison sounds, slightly detune oscillators 2–4 by ±2 semitones.
+> For thick unison sounds, slightly detune oscillators 2–4 by ±2 semitones.
+
+### Paraphony & Multi-Trigger Behavior
+
+The **Matriarch** can operate in *four-voice paraphony* or *monophonic* mode.  
+In paraphonic mode, all oscillators share the same filter and envelope circuits.
+
+| Parameter | Description |
+|------------|-------------|
+| **Voice Allocation** | Notes are assigned cyclically to OSC 1–4 |
+| **Envelope Behavior** | One shared VCA/VCF envelope for all oscillators |
+| **Multi-Trigger Mode** | Each new note can retrigger envelopes (optional) |
+| **Trigger Priority** | Low-note priority in mono, last-note in para mode |
+
+> [!TIP]
+> When using SYNC or FM between oscillators, results vary depending on which oscillator is triggered first — a key factor for expressive paraphonic textures.
 
 ### Paraphonic Behavior
 In **4-note paraphonic mode**, each oscillator tracks one key.  
 All oscillators share the same filter and amplifier envelope, producing a layered yet harmonically distinct sound.
 
 > [!NOTE]
-> > Note: Oscillator sync and FM affect each voice differently depending on trigger order in paraphonic mode.
+> Oscillator sync and FM affect each voice differently depending on trigger order in paraphonic mode.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -162,7 +177,7 @@ All oscillators share the same filter and amplifier envelope, producing a layere
 | **PWM IN** | CV | External modulation of pulse width |
 
 > [!TIP]
-> > Tip: Patch “VCO MIX OUT” directly to “DELAY IN” to bypass the filter for bright FM textures.
+> Patch “VCO MIX OUT” directly to “DELAY IN” to bypass the filter for bright FM textures.
 
 ---
 
@@ -185,7 +200,7 @@ The **Mixer** combines signals from the oscillators and external input before ro
 - The external input passes through the same gain stage and can modulate or replace the oscillator mix.
 
 > [!TIP]
-> > Tip: Overdriving the filter by increasing oscillator levels yields the characteristic Moog growl.
+> Overdriving the filter by increasing oscillator levels yields the characteristic Moog growl.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -216,7 +231,7 @@ The **Filter** is a stereo Moog Ladder Filter operating in parallel or series co
 - The envelope amount determines how much the filter responds dynamically to each keypress.
 
 > [!TIP]
-> > Tip: Try using 50% keyboard tracking with medium resonance for natural brightness across octaves.
+> Try using 50% keyboard tracking with medium resonance for natural brightness across octaves.
 
 ### Patch Points
 | Patch Point | Type | Description |
@@ -228,13 +243,23 @@ The **Filter** is a stereo Moog Ladder Filter operating in parallel or series co
 | **POST FILTER OUT L/R** | Audio | Output after filtering |
 
 > [!NOTE]
-> > Note: Routing “POST FILTER OUT” back into “AUDIO IN” creates a feedback path for aggressive timbres.
+> Routing “POST FILTER OUT” back into “AUDIO IN” creates a feedback path for aggressive timbres.
 
 ---
 
 ## 7. Amplifier (VCA) Section
 
 The **VCA** controls the overall loudness contour of the Matriarch’s signal path.
+Each VCA supports multiple modes: **ENV**, **SPLIT**, and **DRONE**.
+
+| Mode | CV Input Range | Description |
+|-------|----------------|-------------|
+| **ENV / SPLIT** | −8 V … +8 V | Normal bipolar control voltage range |
+| **DRONE** | 0 V … +8 V | Unipolar range for constant level control |
+
+> [!TIP]
+> Patching the **LFO → VCA CV IN** creates a tremolo effect.  
+> In **DRONE** mode, the signal remains continuously open, bypassing envelope modulation.
 
 ### Controls
 | Control | Range | Description |
@@ -255,7 +280,21 @@ The **VCA** controls the overall loudness contour of the Matriarch’s signal pa
 | **AMP ENV GATE IN** | Gate | Triggers envelope externally |
 
 > [!TIP]
-> > Tip: In “ON” mode, the VCA remains open, ideal for drone patches or modular processing.
+> In “ON” mode, the VCA remains open, ideal for drone patches or modular processing.
+
+
+### 7.1 VCA Modes & CV Input Ranges
+
+Each VCA supports multiple modes: **ENV**, **SPLIT**, and **DRONE**.
+
+| Mode | CV Input Range | Description |
+|-------|----------------|-------------|
+| **ENV / SPLIT** | −8 V … +8 V | Normal bipolar control voltage range |
+| **DRONE** | 0 V … +8 V | Unipolar range for constant level control |
+
+> [!TIP]
+> Patching the **LFO → VCA CV IN** creates a tremolo effect.  
+> In **DRONE** mode, the signal remains continuously open, bypassing envelope modulation.
 
 ---
 ## 8. Modulation Section
@@ -275,7 +314,7 @@ Together they provide complex modulation for filter, pitch, amplitude, and exter
 LFO may modulate oscillator pitch, filter cutoff, or amplitude simultaneously depending on patch configuration.
 
 > [!TIP]
-> > Tip: At high rates the LFO can reach the audio range, producing metallic FM-like textures when patched to VCO Pitch In.
+> At high rates the LFO can reach the audio range, producing metallic FM-like textures when patched to VCO Pitch In.
 
 **Patch Points**
 
@@ -309,7 +348,7 @@ Both can be routed freely through the patchbay.
 | **ENV GATE IN** | Gate | External trigger for either envelope |
 
 > [!TIP]
-> > Tip: Route the filter envelope to oscillator pitch for expressive attack bends.
+> Route the filter envelope to oscillator pitch for expressive attack bends.
 
 ---
 
@@ -318,13 +357,14 @@ Both can be routed freely through the patchbay.
 A dual BBD (Bucket-Brigade Device) analog delay capable of stereo ping-pong or dual-mono operation.
 
 ### Controls
-| Control | Range | Description |
-|----------|--------|-------------|
-| **TIME L / R** | 35 ms – 850 ms | Delay time per channel |
-| **FEEDBACK L / R** | 0–10 | Controls number of repeats |
-| **SYNC** | OFF / ON | When ON, delays track global clock divisions |
-| **MIX** | 0–10 | Wet/dry balance |
-| **PING-PONG** | OFF / ON | Cross-feeds left and right channels for stereo movement |
+| Control            | Range          | Description                                             |
+| ------------------ | -------------- | ------------------------------------------------------- |
+| **TIME L / R**     | 35 ms – 850 ms | Delay time per channel                                  |
+| **FEEDBACK L / R** | 0–10           | Controls number of repeats                              |
+| **SYNC**           | OFF / ON       | When ON, delays track global clock divisions            |
+| **MIX**            | 0–10           | Wet/dry balance                                         |
+| **PING-PONG**      | OFF / ON       | Cross-feeds left and right channels for stereo movement |
+| **SPACING**        | Bipolar        | Sets relative offset between L/R delays                 |
 
 **Patch Points**
 
@@ -337,7 +377,27 @@ A dual BBD (Bucket-Brigade Device) analog delay capable of stereo ping-pong or d
 | **MIX CV IN** | CV | Modulates wet/dry mix |
 
 > [!TIP]
-> > Tip: Modulate TIME CV IN with the LFO for vintage tape-style chorusing.
+> Modulate TIME CV IN with the LFO for vintage tape-style chorusing.
+
+### 9.1 Parameters and Rear I/O
+
+### Front Panel Controls
+| Parameter    | Range             | Description                             |
+| ------------ | ----------------- | --------------------------------------- |
+| **TIME**     | ≈35 ms – ≈780 ms  | Delay time per channel                  |
+| **SPACING**  | Bipolar           | Sets relative offset between L/R delays |
+| **FEEDBACK** | 0 – Near-Infinite | Determines number of repeats            |
+| **SYNC**     | On/Off            | Follows external or internal clock      |
+
+### Rear Panel Connections
+| Jack | Description |
+|------|--------------|
+| **DELAY OUT L/R** | 100% wet delay signal outputs |
+| **SYNC IN** | Accepts >3.6 V clock pulse for delay sync |
+| **DELAY FB 2 CV IN** | Controls feedback of Delay 2 independently (0–+8 V) |
+
+> [!TIP]
+> Use **SYNC IN** to clock the delay from external sequencers or drum machines for perfectly synced echoes.
 
 ---
 
@@ -356,15 +416,17 @@ Unpatched, it behaves as a traditional synth; patching overrides or extends the 
 | **Utility** | ATTENUATOR IN/OUT, MULT IN/OUT |
 
 ### Signal Normals (Internal Routings)
+
 - VCO → Mixer → Filter → VCA → Delay → Output  
 - Filter ENV → Filter Cutoff  
 - Amp ENV → VCA Level  
 - LFO → VCO Pitch & Filter Cutoff  
 - Keyboard CV → Oscillator Pitch  
+
 Breaking any connection with a patch cable reroutes the signal to the new destination.
 
 > [!TIP]
-> > Tip: Use the built-in mults to distribute modulation to multiple points without an external splitter.
+> Use the built-in mults to distribute modulation to multiple points without an external splitter.
 
 ---
 
@@ -380,7 +442,8 @@ A 49-key Fatar keyboard with velocity and aftertouch transmits both MIDI and CV.
 | **AFTERTOUCH AMT** | 0–10 | Amount of pressure modulation |
 | **VEL AMT** | 0–10 | Velocity depth applied to amplitude or filter |
 
-**Patch Points**
+### Patch Points
+
 | Patch Point | Type | Description |
 |--------------|------|-------------|
 | **KB PITCH OUT** | CV | 1 V/oct pitch control |
@@ -388,10 +451,21 @@ A 49-key Fatar keyboard with velocity and aftertouch transmits both MIDI and CV.
 | **VEL OUT** | CV | Velocity voltage |
 | **AT OUT** | CV | Aftertouch output |
 | **GLIDE CV IN** | CV | Modulates glide time |
-|--------------|------|-------------|
+
 
 > [!TIP]
-> > Tip: Patch VEL OUT → FILTER CV IN for dynamic touch-responsive brightness.
+> Patch VEL OUT → FILTER CV IN for dynamic touch-responsive brightness.
+
+### 11.1 Keyboard Jacks & Pedals
+
+| Jack | Type | Function / Range |
+|------|------|------------------|
+| **SUSTAIN IN** | Footswitch | Normally Open → closes to ground to sustain notes |
+| **EXP PEDAL IN** | Expression Pedal Input | Supplies +5 V on ring; tip receives variable CV |
+| **EXP CV OUT** | Control Voltage Output | 0…+8 V range |
+
+> [!TIP]
+> Patch **EXP CV OUT → FILTER CUTOFF** for hands-free dynamic control.
 
 ---
 
@@ -399,7 +473,28 @@ A 49-key Fatar keyboard with velocity and aftertouch transmits both MIDI and CV.
 
 Matriarch features a 256-step sequencer and an independent arpeggiator sharing the same control panel.
 
-### 12.1 Sequencer
+### 12.1 Operational Notes
+
+The **Arpeggiator/Sequencer** operates between **20–280 BPM**.  
+Tap the **TAP TEMPO** button to set BPM manually (yellow LED flashes in tempo).  
+Hold **TAP** for ~1 second to return to the previously stored tempo.  
+
+| Function          | Description                    |     |
+| ----------------- | ------------------------------ | --- |
+| **SHIFT + RATE**  | Enables triplet timing         |     |
+| **MODE Selector** | Switch between ARP / SEQ / REC |     |
+| **PLAY**          | Starts or stops playback       |     |
+| **HOLD/LATCH**    | Maintains notes or sequence    |     |
+| **TAP TEMPO**     | Sets the tempo manually        |     |
+
+> [!WARNING]
+> Entering **REC** mode overwrites the existing sequence immediately after the first note or rest is recorded.
+
+> [!TIP]
+> Use **SHIFT + TAP** to divide/multiply tempo divisions on-the-fly.
+
+
+### 12.2 Sequencer
 
 | Function | Description |
 |-----------|-------------|
@@ -418,11 +513,11 @@ Matriarch features a 256-step sequencer and an independent arpeggiator sharing t
 4. [FUNC]+[PLAY] transposes the sequence by played key.
 
 > [!TIP]
-> > Tip: Use external clock from modular gear to sync multiple analog sequencers.
+> Use external clock from modular gear to sync multiple analog sequencers.
 
 ---
 
-### 12.2 Arpeggiator
+### 12.3 Arpeggiator
 
 | Parameter | Options |
 |------------|----------|
@@ -438,11 +533,51 @@ Matriarch features a 256-step sequencer and an independent arpeggiator sharing t
 - Sync to external clock for tempo-locked patterns.
 
 > [!TIP]
-> > Tip: Combine arpeggiator with paraphonic mode for chord-driven rhythmic textures.
+> Combine arpeggiator with paraphonic mode for chord-driven rhythmic textures.
 
 ---
 
-## 13. Utilities and Global Settings
+## 13. Left-Hand Controller (PLAY / HOLD / TAP)
+
+The **Left-Hand Controller section** includes the three main buttons and octave transposition:
+
+| Control | Function |
+|----------|-----------|
+| **PLAY** | Starts or stops the current sequence or arpeggio |
+| **HOLD** | Latches notes during ARP/SEQ playback |
+| **TAP** | Sets BPM manually (LED indicates tempo) |
+| **SHIFT + <KB** | Transpose keyboard down one octave |
+| **SHIFT + KB>** | Transpose keyboard up one octave |
+| **Range** | ±2 octaves |
+
+> [!TIP]
+> The LED behavior provides quick visual feedback: steady = playback active, flashing = tempo.
+
+## 14. Paraphony & Multi-Trigger Behavior
+
+The **Matriarch** can operate in *four-voice paraphony* or *monophonic* mode.  
+In paraphonic mode, all oscillators share the same filter and envelope circuits.
+
+| Parameter | Description |
+|------------|-------------|
+| **Voice Allocation** | Notes are assigned cyclically to OSC 1–4 |
+| **Envelope Behavior** | One shared VCA/VCF envelope for all oscillators |
+| **Multi-Trigger Mode** | Each new note can retrigger envelopes (optional) |
+| **Trigger Priority** | Low-note priority in mono, last-note in para mode |
+
+> [!TIP]
+> When using SYNC or FM between oscillators, results vary depending on which oscillator is triggered first — a key factor for expressive paraphonic textures.
+## 15. Rear Panel Additions – EURO OUT L/R & Headphone
+
+| Jack | Function | Notes |
+|------|-----------|-------|
+| **EURO OUT L/R** | Eurorack-level outputs | Independent of MAIN VOLUME control |
+| **HEADPHONE OUT** | 1/4″ stereo jack | Has its own volume level control |
+
+> [!TIP]
+> The **EURO OUTs** are ideal for integration with modular systems without affecting main output levels.
+
+## 16. Utilities and Global Settings
 
 Accessed via [HOLD] + power-on or via MIDI CC commands.
 
@@ -457,7 +592,7 @@ Accessed via [HOLD] + power-on or via MIDI CC commands.
 
 ---
 
-## 14. MIDI Implementation
+## 17. MIDI Implementation
 
 Matriarch supports full MIDI over USB and DIN.
 
@@ -477,11 +612,11 @@ Matriarch supports full MIDI over USB and DIN.
 | **CC 72** | Release |
 
 > [!TIP]
-> > Tip: Matriarch’s MIDI Out mirrors CV Pitch and Gate data, allowing it to drive external synths without additional converters.
+> Matriarch’s MIDI Out mirrors CV Pitch and Gate data, allowing it to drive external synths without additional converters.
 
 ---
 
-## 15. Calibration and Maintenance
+## 18. Calibration and Maintenance
 
 ### Oscillator Tuning
 1. Warm up unit for 15 minutes.  
@@ -498,7 +633,7 @@ Matriarch supports full MIDI over USB and DIN.
 
 ---
 
-## 16. Appendix – Patch Examples and Technical Specifications
+## 19. Appendix A – Patch Examples and Technical Specifications
 
 ### Example 1 – Stereo Drone
 
@@ -572,4 +707,191 @@ graph LR
 
 ---
 
+## 20. Appendix B - Nomenclature Reference
 
+# Moog Matriarch – Nomenclature Reference
+
+## 20.1. Global Sections
+
+|Code|Section|Description|
+|---|---|---|
+|**VCO**|Oscillator Bank|4 oscillators with sync, FM, wave select|
+|**VCF**|Filter Section|Dual Ladder Filter with stereo / parallel routing|
+|**VCA**|Amplifier Section|Two VCAs with split or summed operation|
+|**MIX**|Mixer Section|Combines oscillator, noise, external input|
+|**ENV**|Envelope Generators|Filter and Amp envelopes|
+|**LFO**|Low-Frequency Oscillator|Modulation source for pitch, filter, amp|
+|**ARPSEQ**|Arpeggiator & Sequencer|Playback, record, clock, hold, play|
+|**DLY**|Stereo Delay|Dual BBD analog delay with sync and feedback|
+|**OUT**|Output & Utilities|Main volume, headphone, Eurorack outputs|
+|**KBD**|Keyboard & Controllers|Keybed, transpose, aftertouch, velocity|
+|**PATCH**|Patchbay|3.5 mm CV/audio patch field|
+|**REAR**|Rear Panel I/O|Power, MIDI, Sync, Euro outputs, etc.|
+
+---
+
+## 20.2. Front Panel – Knobs & Switches
+
+### Oscillator Bank (VCO)
+
+|Label|Name|Function|
+|---|---|---|
+|**VCO1_FREQ**|Oscillator 1 Frequency|Coarse tuning|
+|**VCO1_WAVE**|Oscillator 1 Wave|Select Saw / Square / Triangle|
+|**VCO1_RANGE**|Octave Range|32' / 16' / 8' / 4'|
+|**VCO1_SYNC**|Sync|Hard sync on/off|
+|**VCO1_FM**|FM Amount|Frequency modulation depth|
+|**VCO2_FREQ**|Oscillator 2 Frequency|Detune control|
+|**VCO2_WAVE**|Oscillator 2 Wave|Select waveform|
+|**VCO2_RANGE**|Octave Range|Same as VCO1|
+|**VCO2_HARD_SYNC**|Sync|On/off toggle|
+|**VCO3_FREQ**|Oscillator 3 Frequency|Free-running or synced to VCO1|
+|**VCO4_FREQ**|Oscillator 4 Frequency|Free-running oscillator|
+|**VCO_MIX1-4**|Osc Mix Controls|Level of each oscillator into mixer|
+|**VCO_NOISE**|Noise Level|White noise source|
+|**VCO_EXT_IN**|External Input Level|Audio from patch or rear input|
+
+---
+
+### Filter Section (VCF)
+
+|Label|Name|Function|
+|---|---|---|
+|**VCF_CUTOFF_L/R**|Cutoff Frequency|Sets low-pass cutoff per channel|
+|**VCF_RESONANCE**|Resonance|Emphasizes frequencies near cutoff|
+|**VCF_MODE**|Mode Switch|Stereo / Parallel / Series|
+|**VCF_KEYTRACK**|Keyboard Tracking|Amount of key scaling (0–100%)|
+|**VCF_MOD_SRC**|Mod Source Select|Chooses modulation input (ENV / LFO / EXT)|
+
+---
+
+### Envelope Generators (ENV)
+
+|Label|Name|Function|
+|---|---|---|
+|**ENV_F_ATTACK**|Filter Envelope Attack||
+|**ENV_F_DECAY**|Filter Envelope Decay||
+|**ENV_F_SUSTAIN**|Filter Envelope Sustain||
+|**ENV_F_RELEASE**|Filter Envelope Release||
+|**ENV_A_ATTACK**|Amp Envelope Attack||
+|**ENV_A_DECAY**|Amp Envelope Decay||
+|**ENV_A_SUSTAIN**|Amp Envelope Sustain||
+|**ENV_A_RELEASE**|Amp Envelope Release||
+|**ENV_TRIGGER_MODE**|Multi-Trigger|On/off (retrigger envelopes per note)|
+
+---
+
+### LFO Section
+
+|Label|Name|Function|
+|---|---|---|
+|**LFO_RATE**|Rate|Sets frequency of modulation|
+|**LFO_SHAPE**|Waveform|Triangle / Square / Saw / Ramp|
+|**LFO_AMOUNT**|Depth|Overall modulation level|
+|**LFO_DEST**|Destination|Pitch / Filter / Amp|
+|**LFO_SYNC**|Sync|On/off to master clock|
+
+---
+
+### Mixer Section (MIX)
+
+|Label|Name|Function|
+|---|---|---|
+|**MIX_VCO1-4**|Oscillator Levels|Sets volume per oscillator|
+|**MIX_NOISE**|Noise Level||
+|**MIX_EXT**|External Input Level||
+|**MIX_MASTER**|Master Mix Output Level||
+
+---
+
+### VCA Section
+
+|Label|Name|Function|
+|---|---|---|
+|**VCA_MODE**|ENV / SPLIT / DRONE|Selects amplifier mode|
+|**VCA_CV_IN**|CV Input|−8 V…+8 V for ENV/SPLIT, 0…+8 V for DRONE|
+|**VCA_LEVEL**|Output Level|Final volume control|
+
+---
+
+### Stereo Delay (DLY)
+
+|Label|Name|Function|
+|---|---|---|
+|**DLY_TIME**|Time|35 ms – 780 ms delay range|
+|**DLY_SPACING**|Spacing|Sets offset between L/R channels|
+|**DLY_FEEDBACK**|Feedback|From zero to near-infinite repeats|
+|**DLY_MIX**|Mix|Blend of dry/wet|
+|**DLY_SYNC**|Sync|External clock input (>3.6 V)|
+|**DLY_FB2_CV_IN**|Feedback 2 CV|Modulates feedback for Delay 2 (0–8 V)|
+
+---
+
+### Arpeggiator / Sequencer (ARPSEQ)
+
+|Label|Name|Function|
+|---|---|---|
+|**PLAY_BTN**|Play|Start/stop sequence|
+|**HOLD_BTN**|Hold|Latch notes or sequence|
+|**TAP_BTN**|Tap Tempo|Set BPM manually|
+|**SHIFT_RATE**|Triplet Mode|SHIFT + RATE = triplets|
+|**OCT_SHIFT**|Keyboard Transpose|±2 octaves|
+
+---
+
+## Patch Points (3.5 mm CV & Audio)
+
+|Patch Point|Type|Description|
+|---|---|---|
+|**KB PITCH OUT**|CV|1 V/oct pitch output|
+|**KB GATE OUT**|Gate|Note-on trigger|
+|**VEL OUT**|CV|Velocity CV 0–+8 V|
+|**AT OUT**|CV|Aftertouch CV|
+|**GLIDE CV IN**|CV|Controls portamento|
+|**VCF CUTOFF IN L/R**|CV|Modulates filter cutoff|
+|**VCF RES IN L/R**|CV|Modulates resonance|
+|**VCA CV IN 1/2**|CV|Amplifier control input|
+|**DLY SYNC IN**|Gate|Clock input >3.6 V|
+|**DLY FB2 CV IN**|CV|Delay feedback modulation|
+|**DELAY OUT L/R**|Audio|100% wet outputs|
+|**EXT AUDIO IN**|Audio|External input to mixer|
+
+---
+
+## 20.3. Rear Panel (REAR)
+
+|Label|Function|Notes|
+|---|---|---|
+|**MIDI IN/OUT/THRU**|5-pin DIN|Full MIDI I/O|
+|**USB**|USB-MIDI|Class-compliant|
+|**SYNC IN/OUT**|Clock|Sync with external sequencers|
+|**MAIN OUT L/R**|¼″ TRS|Master stereo output|
+|**EURO OUT L/R**|3.5 mm|Modular-level, independent from MAIN VOL|
+|**HEADPHONES OUT**|¼″ Stereo|Has independent level control|
+|**SUSTAIN IN**|Footswitch|Normally Open to ground|
+|**EXP PEDAL IN**|Expression Pedal|+5 V reference on ring|
+|**EXP CV OUT**|Control Voltage Out|0…+8 V range|
+|**POWER IN**|12 V DC 2 A|Center-positive adapter|
+
+---
+
+## 20.4. Naming Conventions (for documentation)
+
+|Type|Prefix|Example|Meaning|
+|---|---|---|---|
+|**Knob**|`VCO1_`, `VCF_`, `DLY_`|`VCF_CUTOFF_L`|Rotary control|
+|**Button**|`PLAY_BTN`, `SYNC_BTN`|`HOLD_BTN`|Momentary or toggle button|
+|**Switch**|`VCF_MODE`, `VCA_MODE`|`VCA_MODE`|2–3 position switch|
+|**Jack**|`PATCH_`, `REAR_`|`PATCH_VCA1_CV_IN`|Patch point input/output|
+|**Section**|`SEC_`|`SEC_VCF`, `SEC_DLY`|Logical grouping for diagrams|
+
+---
+
+## 20.5. Suggested Mermaid Aliases
+
+Use concise node labels in diagrams, e.g.:
+
+OSC1 --> MIX 
+MIX --> VCF 
+VCF --> VCA 
+VCA --> DLY DLY --> OUT CONTOUR -.-> VCA_CV LFO -.-> VCF_CUTOFF`
