@@ -11,7 +11,7 @@ Each synthesizer has its own dedicated markdown file with comprehensive informat
 ```
 synths/
 ├── README.md (this file)
-├── digitone-ii.md
+├── Elektron-Digitone-II-Complete-Reference.md
 ├── moog-matriarch.md (coming soon)
 ├── vital.md (coming soon)
 └── ...
@@ -21,7 +21,7 @@ synths/
 
 ## ✅ Currently Available
 
-### [digitone-ii.md](digitone-ii.md)
+### [[Elektron-Digitone-II-Complete-Reference.md]]
 **Elektron Digitone II** - Complete Reference  
 **Source**: Official Digitone II User Manual OS 1.00A (October 2024)  
 **Status**: ✅ Complete and verified

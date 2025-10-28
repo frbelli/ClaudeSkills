@@ -8,8 +8,7 @@ Complete reference for all supported hardware and software synthesizers. This da
 
 ### Elektron Digitone II
 
-**📖 Complete Documentation**: See [synths/digitone-ii.md](synths/digitone-ii.md)
-
+**📖 Complete Documentation**: See [synths/Elektron-Digitone-II-Complete-Reference.md](synths/Elektron-Digitone-II-Complete-Reference)
 **Quick Reference**:
 - **Type**: Digital 8-voice FM synthesizer with subtractive filtering
 - **Operators**: 4 operators (Groups: C, A, B1, B2)
