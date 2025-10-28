@@ -12,7 +12,7 @@ Each synthesizer has its own dedicated markdown file with comprehensive informat
 synths/
 ├── README.md (this file)
 ├── Elektron-Digitone-II-Complete-Reference.md
-├── moog-matriarch.md (coming soon)
+├── Moog-Matriarch–Full Reference-Guide.md
 ├── vital.md (coming soon)
 └── ...
 ```
@@ -35,6 +35,22 @@ synths/
 - Sound design strategies
 - Performance features
 - All info verified from official manual
+
+### [[Moog-Matriarch-Complete-Reference.md]]
+**Moog Matriarch** – Complete Reference  
+**Source:** Moog Matriarch Owner’s Manual (Rev. 2020)  
+**Status:** ✅ Complete and verified  
+
+**Includes:**
+- Detailed modular architecture by physical section (VCO, Mixer, Filter, VCA, Modulation, Delay, Patchbay, Sequencer)  
+- Patchbay reference with CV/Gate routing tables  
+- Parameter and control descriptions for all modules  
+- Signal flow and patch diagrams in both ASCII and Mermaid format  
+- Sequencer & Arpeggiator operational guide  
+- MIDI implementation and calibration procedures  
+- Example patches (“Stereo Drone”, “Percussive Sequence”) with visual routing  
+
+> Verified from Moog’s official manual and cross-checked with hardware unit behavior.
 
 ---
 
@@ -178,7 +194,7 @@ When adding a new synthesizer reference:
 | Synth | Status | Manual Source | Last Updated |
 |-------|--------|---------------|--------------|
 | Digitone II | ✅ Complete | OS 1.00A (Oct 2024) | Oct 2024 |
-| Moog Matriarch | 🔜 Planned | - | - |
+| Moog Matriarch | ✅ Complete | Rev. 2020 | Oct 2025 |
 | Vital | 🔜 Planned | - | - |
 | Serum | 🔜 Planned | - | - |
 | Massive X | 🔜 Planned | - | - |

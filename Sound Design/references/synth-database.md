@@ -61,6 +61,7 @@ Complete reference for all supported hardware and software synthesizers. This da
 ---
 
 ### Moog Matriarch
+**📖 Complete Documentation**: See [[Moog-Matriarch–Full Reference-Guide]]
 
 - **Type**: Semi-modular 4-VCO analog paraphonic synthesizer
 - **Oscillators**: 4 analog VCOs (saw, triangle, square, PWM)
