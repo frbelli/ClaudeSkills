@@ -267,102 +267,196 @@ Complete reference for all supported hardware and software synthesizers. This da
 
 ### Behringer Crave
 
-- **Type**: Semi-modular analog monophonic synthesizer
-- **Oscillators**: 1 analog VCO (saw, triangle, square, PWM)
-- **Filter**: 24dB Moog-style ladder filter (LP)
+**📖 Complete Documentation**: See [synths/Behringer-Crave-Complete-Reference-Guide-v1.0.md](synths/Behringer-Crave-Complete-Reference-Guide)
+
+- **Type**: Semi-modular analog synthesizer (Mother-32 inspired)
+- **Oscillator**: Single analog VCO (3340 core) with saw and square waves
+- **Filter**: Moog-style 24dB/oct transistor ladder filter
 - **Voices**: Monophonic
-- **Envelopes**: 1x ADSR
-- **LFO**: 1 LFO with multiple waveforms
-- **Sequencer**: 32-step sequencer
-- **Patchbay**: 18 patch points (3.5mm mini-jacks)
-- **Arpeggiator**: Built-in arpeggiator
-- **MIDI**: Full MIDI implementation
+- **Envelope**: Single ADS envelope (Attack, Decay, Sustain)
+- **LFO**: 1 LFO with triangle and square waveforms (0.01-30 Hz, audio-rate capable)
+- **Sequencer**: 32-step sequencer/arpeggiator with 16 pattern storage
+- **Patchbay**: 18 patch points for modular integration
+- **MIDI**: MIDI In/Thru + USB MIDI (class-compliant)
 - **Specialties**:
-  - Affordable semi-modular
-  - Moog-style ladder filter
-  - Compact size
-  - Patch bay for modular integration
+  - Budget-friendly semi-modular (~$200)
+  - Mother-32 architecture at accessible price
+  - 32-step sequencer with clock divisions
+  - USB-to-CV bridge capability
+  - Eurorack compatible I/O (1V/oct, ±5V CV, 5V gates)
+  - Audio-rate LFO for FM effects
 
 **Programming Interface**:
-- Knob-per-function for main parameters
-- Mini-jack patch bay (3.5mm)
-- External keyboard/sequencer needed
+- Knob-per-function layout
+- Simple sequencer operation (Play/Record/Step)
+- Patchbay for modular routing
+- No menu diving
 
 **Best For**:
-- Mono bass lines
-- Acid basslines (TB-303 style)
-- Lead lines
-- Modular integration (Eurorack compatible with adapters)
-- Budget analog sound
+- Acid basslines (TB-303 style with sequencer)
+- Dark techno bass
+- Budget semi-modular entry point
+- MIDI-to-CV conversion for Eurorack
+- Learning modular synthesis concepts
+- Live performance (immediate control)
+- Integration with Moog Mother-32 ecosystem
 
-**Programming Tips**:
+**Programming Tips - Basic Patches**:
 
-**TB-303 Style Acid Bass**:
-1. VCO: Saw wave
-2. Filter: LP, cutoff 30%, resonance 80%
-3. Envelope → Filter Cutoff (maximum amount)
-4. Envelope: Fast attack, fast decay, zero sustain, short release
-5. Sequencer: 16 steps with accent on key notes
+**Acid Bass**:
+1. VCO: Saw wave, tune to C2
+2. FILTER: Cutoff 30%, Resonance 70%
+3. VCF MOD: ENV selected, amount 80%
+4. ENVELOPE: Attack 0, Decay 100ms, Sustain 0
+5. GLIDE: 50ms for slides
+6. Sequencer: Program 16-step pattern with rests and ties
+7. High resonance creates characteristic squelch
 
-**Mono Lead**:
-1. VCO: Square wave with PWM
-2. Filter: Cutoff 50%, resonance 40%
-3. LFO → PWM for movement
-4. Envelope: Medium attack, medium decay, half sustain
+**Dark Techno Lead**:
+1. VCO: Square wave, octave up (C3-C4)
+2. PULSE WIDTH: 60%
+3. FILTER: Cutoff 50%, Resonance 40%
+4. VCF MOD: LFO selected
+5. LFO: Triangle, slow rate (~1 Hz)
+6. ENVELOPE: Fast attack, medium decay
+7. Add external reverb/delay for space
+
+**Self-Modulated Bass**:
+1. VCO OUT → VCF IN (normal connection)
+2. LFO OUT → VCF MOD IN
+3. LFO: Fast rate (20-30 Hz), Square wave
+4. FILTER: Cutoff 40%, Resonance 80%
+5. Creates FM-style growl and movement
+6. Adjust LFO rate for different timbres
+
+**Modular Integration Ideas**:
+- Use as MIDI-to-CV bridge for Eurorack systems
+- Patch: CLOCK OUT → External sequencer CLK IN
+- Patch: ENV OUT → External VCF for parallel filtering
+- Patch: External LFO → VCF MOD IN for complex modulation
+- Patch: VCO OUT → External waveshaper → VCF IN
+- Patch: External sequencer CV → VCO IN for melodic control
+
+**Unique Features**:
+- **USB MIDI**: Class-compliant, works with any DAW or controller
+- **32-Step Sequencer**: Double the length of many budget synths
+- **Clock Sync**: Analog clock in/out + MIDI clock sync
+- **Eurorack Voltages**: Standard 1V/oct pitch, ±5V CV, 5V gates
+- **Cost-Effective**: Best price-to-feature ratio for semi-modular
+- **Audio-Rate Modulation**: LFO can reach 30 Hz for FM-like tones
 
 **Limitations**:
-- Monophonic only
-- Single oscillator (limited thickness)
-- No built-in effects
-- Small patch bay (18 points vs Matriarch's 90)
+- Monophonic only (single voice)
+- Single envelope (no separate VCA envelope vs filter envelope)
+- Limited modulation compared to Mother-32
+- Basic LFO (only 2 waveforms vs Mother-32's more options)
+- No built-in effects (reverb/delay require external gear)
+- Lower build quality than Moog equivalents
+- ADS envelope (no Release stage, unlike ADSR)
 
 ---
 ### Make Noise 0-Coast
 
 **📖 Complete Documentation**: See [synths/Make-Noise-0-Coast-Complete-Reference.md](synths/Make-Noise-0-Coast-Complete-Reference)
 
-- **Type**: Semi-modular single-voice synthesizer (West Coast architecture)
-- **Oscillator**: 1 analog oscillator with sine and square outputs
-- **Waveshaping**: Overtone generator and Multiply section (wavefolder)
-- **Filter**: None (timbre shaping via wavefolding and dynamic control)
+- **Type**: Semi-modular "No-Coast" synthesizer (hybrid East + West Coast)
+- **Oscillator**: Single analog VCO with sine and square outputs (27 Hz - 3.5 kHz)
+- **Waveshaping**: 
+  - Overtone (harmonic control via additive synthesis)
+  - Multiply (West Coast wavefolder for complex timbres)
 - **Voices**: Monophonic
-- **Envelopes**: Contour (AD) and Slope (function generator / LFO)
-- **Modulation**: CV-controllable Rise/Fall, Overtone, Multiply, and Dynamics
-- **Patchbay**: 27 points (13 outputs, 14 inputs)
-- **LFO**: Contour can function as LFO
-- **MIDI**: MIDI to CV/Gate converter with assignable CC Program Pages
+- **Envelopes**: 
+  - Slope Generator (function generator/LFO/envelope, voltage-controlled rise/fall)
+  - Contour Generator (ADSR-like attack/decay envelope)
+- **Dynamics**: VCA + Low-pass gate hybrid (voltage-controlled)
+- **Modulation**: 
+  - Voltage math processor (2-channel attenuverter/mixer)
+  - Balance control (internal/external audio mixer)
+- **Patchbay**: 27 patch points (13 outputs, 14 inputs)
+- **MIDI**: MIDI-to-CV with 8 programmable pages for extensive CC mapping
+- **Clock**: Internal tempo control with MIDI clock sync
 - **Specialties**:
-  - Combines East-Coast and West-Coast synthesis principles
-  - Fully patchable with Eurorack compatibility
-  - Self-generating patch capability (Krell-style)
-  - Unique wavefolding timbres instead of traditional filtering
-  - Velocity, Mod Wheel, and Aftertouch assignable via MIDI CC
+  - "No-Coast" philosophy (neither pure East nor West Coast)
+  - Self-patching Krell capabilities for generative music
+  - Slope generator (versatile: envelope, LFO, or one-shot)
+  - Voltage math processor for complex CV operations
+  - MIDI CC assignment flexibility across 8 program pages
+  - Fully Eurorack compatible (±5V CV, +8V gates)
 
 **Programming Interface**:
-- Knob-per-function layout
-- Clear signal flow: `OSC → OVERTONE → MULTIPLY → DYNAMICS → BALANCE → LINE OUT`
-- Patch points break internal normalizations
-- MIDI and analog control coexist seamlessly
+- Knob-per-function with logical left-to-right signal flow
+- Patchbay breaks normalizations for modular routing
+- Program button accesses 8 MIDI configuration pages
+- No menu diving (all controls immediate)
 
 **Best For**:
-- Experimental modular textures  
-- Evolving drones and generative sequences  
-- Basslines and rhythmic FM tones  
-- External signal processing (acts as filter/VCA/wavefolder)  
-- West-Coast sound design exploration  
-- 
-**Programming Tips**:
-- Explore wavefolding (Balance control)
-- Use Multiply section for complex modulation
-- Patch Contour to multiple destinations
-- Self-patching creates feedback loops
-- 
+- Generative/Krell patches (self-evolving, never-repeating drones)
+- West Coast style synthesis (wavefolding and modulation)
+- Experimental sound design and abstract textures
+- Deep bass (pure sine wave output)
+- Rhythmic sequences (using Slope as complex LFO)
+- Modular system integration (Eurorack compatible)
+- MIDI-to-CV conversion with flexible CC mapping
+- External signal processing (wavefolder, VCA, LPG)
+
+**Programming Tips - Basic Patches**:
+
+**Simple Bass**:
+1. OSC: Sine wave output, tune to bass range (C1-C2)
+2. OVERTONE: 0% (pure sine, no harmonics)
+3. MULTIPLY: 20-30% (adds subtle harmonics)
+4. CONTOUR: Fast attack (<10ms), medium decay (200ms)
+5. DYNAMICS: Modulated by Contour (normalized)
+6. BALANCE: Full internal signal
+7. Play via MIDI for classic deep sub bass
+
+**Generative Krell Patch** (self-evolving):
+1. SLOPE: Cycle button ON, slow rise/fall (5-10 seconds each)
+2. Patch: SLOPE OUT → CONTOUR IN (self-triggering envelope)
+3. Patch: CONTOUR OUT → 1V/OCT IN (semi-random pitch)
+4. Patch: SLOPE OUT → MULTIPLY CV IN (evolving timbre)
+5. OVERTONE: 50%, MULTIPLY: 60%
+6. System self-generates infinite variations
+
+**Wobble Bass**:
+1. OSC: Square wave, tune to C1
+2. SLOPE: Cycle ON, medium-fast rate (1-2 Hz)
+3. Patch: SLOPE OUT → MULTIPLY CV IN
+4. MULTIPLY: 70-80% (heavy wavefolding)
+5. OVERTONE: 40% (adds harmonics)
+6. CONTOUR: Fast attack, short decay
+7. DYNAMICS: Modulated by Contour for punchy attack
+
+**External Processor Patch**:
+1. Patch external audio → MULTIPLY IN
+2. MULTIPLY: 50-70% (wavefold external signal)
+3. DYNAMICS: Manual control or CV modulated
+4. Use 0-Coast as effects processor for other synths
+
+**Modular Patching Ideas**:
+- Patch: SLOPE OUT → OVERTONE CV (evolving harmonic content)
+- Patch: CONTOUR OUT → LIN FM IN (pitch envelope for percussive tones)
+- Patch: MULTIPLY OUT → External filter → BALANCE IN (parallel processing)
+- Patch: External sequencer → 1V/OCT IN + CONTOUR GATE IN
+- Use voltage math to mix/invert multiple modulation sources
+- Patch: SLOPE OUT → CH1 IN, CONTOUR OUT → CH2 IN, SUM OUT → MULTIPLY CV
+
+**Unique Features**:
+- **Slope Generator**: Multi-function (envelope, LFO, function generator, or one-shot)
+- **Voltage Math**: Built-in 2-channel attenuverter and mixer for complex CV processing
+- **No-Coast Design**: Combines subtractive (East) and additive/modulation (West) philosophies
+- **Krell Patching**: Self-patching creates generative, evolving, never-repeating soundscapes
+- **MIDI Flexibility**: 8 program pages allow extensive MIDI CC mapping to any parameter
+- **Low-Pass Gate**: Dynamics section combines VCA and filter characteristics (West Coast style)
+- **Pure Sine Wave**: Rare in modern synths, perfect for deep bass
+
 **Limitations**:
-- Monophonic
-- No keyboard
-- Steep learning curve
-- Not for traditional playing
-- Banana jacks (not standard 3.5mm)
+- Monophonic (single voice only)
+- No built-in sequencer (requires external sequencer or MIDI)
+- No effects (reverb/delay require external gear)
+- Learning curve for modular patching concepts
+- Single oscillator (limited sound layering without external gear)
+- No traditional filter (timbral shaping via wavefolding only)
 
 ---
 
@@ -667,6 +761,31 @@ Use `scripts/generate_vital_preset.py` to create .vital files programmatically.
 4. Extensive modulation for complexity
 5. Experiment with unusual combinations
 
+### For West Coast / No Coast Synths (0-Coast)
+1. Start with pure waveforms (sine or square)
+2. Use wavefolding (Multiply) instead of filtering for timbral shaping
+3. Modulate wavefolder depth for movement
+4. Explore self-patching for generative sequences
+5. Voltage math for complex modulation sources
+6. Low-pass gate creates natural-sounding dynamics
+7. Embrace unpredictability and evolution
+
+### For Subharmonic Synths (Subharmonicon)
+1. Start with main oscillators tuned to root note
+2. Add subharmonics (÷2, ÷3, ÷4) for depth
+3. Use polyrhythm generators for evolving sequences
+4. Quantize for musical intervals or disable for experimental tuning
+5. Link sequencers for synchronized phrases or unlink for drift
+6. Patch rhythm outputs to modulate other parameters
+
+### For Percussion Synths (DFAM)
+1. Start with single VCO for kicks (low pitch, fast pitch envelope)
+2. Add noise for snare character
+3. Use short decay envelopes for percussive articulation
+4. Per-step velocity and pitch for groove
+5. Patch VCO2 FM IN for metallic tones
+6. Experiment with VCF self-oscillation for tonal percussion
+
 ---
 
 ## PRESET FILE FORMATS REFERENCE
@@ -679,6 +798,29 @@ Use `scripts/generate_vital_preset.py` to create .vital files programmatically.
 | Diva | u-he | .h2p | ⚠️ Difficult (proprietary) |
 | Pigments | Arturia | .pigments | ⚠️ Difficult (proprietary) |
 | Digitone II | Sysex | .syx | ⚠️ Complex (MIDI Sysex) |
+
+---
+
+## SEMI-MODULAR INTEGRATION GUIDE
+
+**Hardware with Patchbays**:
+- **Matriarch**: 90 patch points (most extensive)
+- **Subharmonicon**: 32 patch points
+- **0-Coast**: 27 patch points (13 out, 14 in)
+- **Crave**: 18 patch points
+- **DFAM**: 24 patch points
+
+**Eurorack Compatibility**:
+- All hardware synths use Eurorack voltage standards (1V/oct, ±5V CV, +5V/+8V gates)
+- Can integrate with external Eurorack modules
+- Crave and 0-Coast are especially designed for modular integration
+
+**Common Patching Scenarios**:
+1. **Clock sync**: Connect CLOCK OUT from one synth to CLK IN of another
+2. **Envelope sharing**: Patch ENV OUT to modulate filter cutoff or VCA on another synth
+3. **Sequencer control**: Use sequencer CV OUT to control external oscillator pitch
+4. **Cross-modulation**: VCO OUT from one synth to FM IN on another
+5. **Voltage math**: Use 0-Coast's voltage processor to mix/scale CVs from multiple sources
 
 ---
 
@@ -703,14 +845,20 @@ Use `scripts/generate_vital_preset.py` to create .vital files programmatically.
 
 ## WHEN TO USE WHICH SYNTH
 
-**For Dark Techno Bass**: Matriarch, Digitone II, Vital, Serum  
-**For Ambient Pads**: Matriarch, Pigments, Diva, Massive X  
+**For Dark Techno Bass**: Matriarch, Digitone II, Crave, Vital, Serum  
+**For Ambient Pads**: Matriarch, Pigments, Diva, Massive X, 0-Coast (drones)  
 **For Acid Lines**: Crave, Matriarch  
 **For FM Sounds**: Digitone II, Massive X (phase mod)  
 **For Experimental**: 0-Coast, Subharmonicon, Pigments  
+**For Generative Music**: 0-Coast (Krell), Subharmonicon (polyrhythms)  
 **For Vintage 80s**: Diva, Matriarch  
 **For Modern EDM**: Vital, Serum, Massive X  
 **For Drums/Percussion**: DFAM, Digitone II  
+**For Sub Bass**: Subharmonicon, 0-Coast (sine), Crave, Matriarch  
+**For Budget Analog**: Crave (~$200)  
+**For West Coast Tones**: 0-Coast (wavefolding, no filter)  
+**For Modular Learning**: Crave, 0-Coast, DFAM  
+**For MIDI-to-CV**: 0-Coast (8 program pages), Crave (USB MIDI)
 
 ---
 
