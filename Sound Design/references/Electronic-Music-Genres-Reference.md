@@ -12,29 +12,6 @@ tags:
 description: Catalogo tecnico e concettuale dei sistemi modulari, delle architetture generative e delle estetiche post-analogiche nella musica elettronica contemporanea.
 ---
 
-## Indice
-- [House](#house)
-- [Techno](#techno)
-- [Trance](#trance)
-- [Drum and Bass / Jungle](#drum-and-bass--jungle)
-- [Breakbeat](#breakbeat)
-- [Dub / Dub Techno](#dub--dub-techno)
-- [Electro / Electroclash](#electro--electroclash)
-- [Ambient / Downtempo / Chillout](#ambient--downtempo--chillout)
-- [IDM / Glitch / Experimental](#idm--glitch--experimental)
-- [Industrial / EBM / Noise](#industrial--ebm--noise)
-- [Hardcore / Gabber / Hardstyle](#hardcore--gabber--hardstyle)
-- [Garage / 2-Step / Bassline / UK Funky](#garage--2-step--bassline--uk-funky)
-- [Dubstep / Post-Dubstep / Future Bass](#dubstep--post-dubstep--future-bass)
-- [Synthwave / Retrowave / Vaporwave](#synthwave--retrowave--vaporwave)
-- [Minimal / Microhouse](#minimal--microhouse)
-- [Progressive / Melodic](#progressive--melodic)
-- [Acid / Rave / Old School](#acid--rave--old-school)
-- [Leftfield / Experimental Pop](#leftfield--experimental-pop)
-- [Lo-Fi / Bedroom / Chillhop](#lo-fi--bedroom--chillhop)
-- [Timeline e Influenze Incrociate](#timeline-e-influenze-incrociate)
-
-# Enciclopedia dei Generi della Musica Elettronica  
 ### *Electronic Music Genres Reference (Pure Electronic Edition)*  
 
 ## 1. House
@@ -79,9 +56,78 @@ description: Catalogo tecnico e concettuale dei sistemi modulari, delle architet
 
 **Artisti chiave:** Juan Atkins, Jeff Mills, Robert Hood, Carl Cox, Richie Hawtin, Ben Klock, DVS1, Charlotte de Witte, Amelie Lens.
 
+
+
 ---
 
-## 3. Trance
+## **3. Organic Techno / Downtempo Techno**
+
+**Derivazione:** Minimal Techno + Nu-Jazz + Downtempo  
+**Presenza:** Weval
+
+**Caratteristiche musicali:**
+
+- **BPM:** 100–120
+- **Struttura:** ibrida, con groove lento e modulazioni continue
+- **Timbro:** analogico, saturo, calore armonico e uso esteso di sidechain dolce
+- **Atmosfera:** intima, emotiva, ma con drive da club contenuto
+
+**Macchine tipiche:** Elektron Analog Rytm, Prophet Rev2, Moog Sub 37, Ableton Live con plugin saturatori, hardware analogico compresso.
+
+**Sottogeneri:**
+
+- **Downtempo Techno:** tempo lento, sensibilità melodica (Weval, Christian Löffler)
+- **Organic Techno:** combinazione tra groove elettronico e strumenti acustici (Kiasmos, Monolink).
+
+**Artisti chiave:** Weval, Christian Löffler, Kiasmos, Ben Böhmer, Monolink, Parra for Cuva.
+
+---
+
+## **4. Cinematic Techno / Berlin Electronica**
+
+**Derivazione:** Minimal / Ambient Techno + IDM-Pop  
+**Presenza:** Moderat
+
+**Caratteristiche musicali:**
+
+- **BPM:** 115–130
+- **Struttura:** sequenze progressive con layering armonico; breakdown cinematici
+- **Timbro:** elettronico stratificato, voce integrata come texture; forte uso di compressione parallela e delay sincronizzati
+- **Atmosfera:** malinconica, urbana, introspectiva
+
+**Macchine tipiche:** Elektron Octatrack, Moog Voyager, Prophet-6, Modular Eurorack, Ableton Live con Max for Live.
+
+**Sottogeneri:**
+
+- **Berlin Electronica:** estetica sonora Kompakt/Monkeytown, spazialità e introspezione (Moderat, Apparat).
+- **Cinematic Techno:** arrangiamento filmico con tensioni armoniche progressive (Jon Hopkins, Rival Consoles).
+
+**Artisti chiave:** Moderat, Apparat, Jon Hopkins, Stephan Bodzin, Nils Frahm, Kiasmos.
+
+---
+
+## **5. Post-Techno / Neo-IDM**
+
+**Derivazione:** Techno + IDM + Ambient  
+**Presenza:** Rival Consoles
+
+**Caratteristiche musicali:**
+
+- **BPM:** 90–125
+- **Struttura:** combinazione di loop techno e destrutturazione IDM
+- **Timbro:** analogico, texturale, con focus su modulazione dinamica e imperfezione controllata
+- **Atmosfera:** contemplativa, fisica ma cerebrale
+
+**Macchine tipiche:** Prophet-6, Moog Matriarch, Elektron Analog Four, modulari eurorack, pedalboard FX (Strymon, Eventide).
+
+**Sottogeneri:**
+
+- **Neo-IDM:** evoluzione moderna di Warp Records con sensibilità ambient (Rival Consoles, Clark).
+- **Textural Techno:** groove techno come base per variazioni timbriche continue.
+
+**Artisti chiave:** Rival Consoles, Max Cooper, Clark, Jon Hopkins, Daniel Avery, Floating Points.
+
+## 6. Trance
 **Origine:** Germania e Belgio, fine anni ’80. Evoluzione melodica della Techno e House.  
 
 **Caratteristiche musicali:**  
@@ -102,7 +148,7 @@ description: Catalogo tecnico e concettuale dei sistemi modulari, delle architet
 
 ---
 
-## 4. Drum and Bass / Jungle
+## 7. Drum and Bass / Jungle
 **Origine:** UK, inizio anni ’90, evoluzione di rave breakbeat + reggae sound system culture.  
 
 **Caratteristiche musicali:**  
@@ -430,6 +476,73 @@ description: Catalogo tecnico e concettuale dei sistemi modulari, delle architet
 
 ---
 
+## **20. Emotional Electronica / Indie Cinematic**
+
+**Derivazione:** IDM-Pop + Ambient + Indie Electronic  
+**Presenza:** Tutti e tre (Weval, Moderat, Rival Consoles)
+
+**Caratteristiche musicali:**
+
+- **BPM:** 90–120
+- **Struttura:** progressione armonica e narrativa, uso drammatico della dinamica
+- **Timbro:** synth caldi, piani riverberati, bassi rotondi, mix “wide cinematic”
+- **Atmosfera:** emotiva, melanconica, intensa ma controllata
+
+**Macchine tipiche:** Prophet Rev2, Moog Subsequent, Elektron Analog Keys, Ableton Live, Omnisphere, plugin cinematici (Valhalla, Soundtoys).
+
+**Sottogeneri:**
+
+- **Emotive Techno:** techno narrativa con orchestrazione e coralità (Jon Hopkins).
+- **Indie Cinematic:** musica elettronica strutturata come soundtrack (Rival Consoles, Weval).
+
+**Artisti chiave:** Rival Consoles, Weval, Jon Hopkins, Christian Löffler, Nils Frahm, Kiasmos, Ben Böhmer.
+
+---
+
+## **21. Ambient Techno / Progressive Ambient**
+
+**Derivazione:** Ambient + Techno minimale  
+**Presenza:** Moderat, Rival Consoles
+
+**Caratteristiche musicali:**
+
+- **BPM:** 105–125
+- **Struttura:** pattern techno lenti, layering di pad e rumore armonico
+- **Timbro:** sintetico ma caldo, bassi profondi, riverberi ampi e stereo spaziale evolutivo    
+- **Atmosfera:** meditativa, sospesa, dinamicamente controllata
+
+**Macchine tipiche:** Roland SH-101, Elektron Digitone, modulari Eurorack, plugin granulari (Pigments, Portal).
+
+**Sottogeneri:**
+
+- **Progressive Ambient:** fusione trance minimale e ambient cinematica.
+- **Textural Techno:** texture in primo piano, beat secondario.
+
+**Artisti chiave:** Rival Consoles, Moderat, Jon Hopkins, Recondite, Max Cooper, Luke Abbott, Monolake.
+
+---
+
+## **22. Neo-Emotive Minimal / Melodic Microhouse**
+
+**Derivazione:** Minimal + Progressive + Cinematic Pop  
+**Presenza:** Weval (prima fase)
+
+**Caratteristiche musicali:**
+
+- **BPM:** 115–125
+- **Struttura:** micro-layering ritmico e armonico, dinamiche lente e dettagliate
+- **Timbro:** pulito, compressione analogica soft, microclick e suoni “percussivi melodici”
+- **Atmosfera:** astratta ma calda, intima, elegante
+
+**Macchine tipiche:** Elektron Machinedrum, Prophet Rev2, modulari Doepfer, Ableton Live, analog compressor outboard.
+
+**Sottogeneri:**
+
+- **Melodic Minimal:** minimal con progressione armonica (Weval, Pantha du Prince).
+- **Neo-Microhouse:** più profonda e timbricamente espressiva.
+
+**Artisti chiave:** Weval, Pantha du Prince, Robag Wruhme, Extrawelt, Christian Löffler.
+
 # 🕓 Timeline e Influenze Incrociate
 
 | Decennio | Generi emergenti | Tecnologie chiave | Influenze principali |
@@ -455,5 +568,3 @@ description: Catalogo tecnico e concettuale dei sistemi modulari, delle architet
 Questa enciclopedia raccoglie le principali famiglie della musica elettronica “pura”, escludendo ibridi pop/rock.  
 Può essere usata come reference per produzione, DJing, o studio storico-tecnico.  
 
-**Prossimo documento previsto:**  
-*Electronic Crossovers & Hybrid Genres* – analisi delle contaminazioni (Synthpop, Trip-Hop, Electro-Punk, ecc.).
