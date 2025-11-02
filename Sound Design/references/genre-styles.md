@@ -1298,35 +1298,206 @@ WHY: Creates energy and funk groove
 
 ---
 
+## 🌌 EMOTIVE / CINEMATIC ELECTRONICA
+
+#### CINEMATIC TECHNO / BERLIN ELECTRONICA
+
+**BPM:** 110–125  
+**Character:** Emotional, spacious, layered  
+**Sound DNA:**
+
+- Hybrid analog + digital
+- Deep sidechain compression with long reverb tails
+- Emphasis on stereo width and atmospheric texture
+
+**Typical Patches:**
+
+- **Bass:** Warm sine/saw, low cutoff (~200Hz), soft saturation
+- **Pad:** Layered textures with LFO drift
+- **Lead:** Soft-pluck or granular hybrid lead
+- **FX:** Reversed reverbs, tape echoes, sidechain ducking
+
+**Production Tips:**
+
+- Moderate compression for cinematic width
+- Avoid excessive transient peaks
+- Automation for slow emotional swells
+- Arrange like a film cue: intro → exposition → climax → dissolve
+
+**Reference Artists:** Moderat, Apparat, Jon Hopkins, Stephan Bodzin
+
+---
+
+#### ORGANIC / DOWNTEMPO TECHNO
+
+**BPM:** 100–115  
+**Character:** Analog, warm, textured, groove-oriented  
+**Sound DNA:**
+
+- Acoustic percussions with electronic backbone
+- Gentle low-end movement (no sub overdrive)
+- Vinyl/tape saturation
+
+**Typical Patches:**
+
+- **Bass:** Triangle or sine with light glide, cutoff <200Hz
+- **Percussion:** Shakers, kalimba, organic loops
+- **Pad:** Filtered field recordings with LFO depth
+- **Lead:** Subtle analog plucks
+
+**Production Tips:**
+
+- Humanize timing (±10ms random)
+- Use convolution reverb with natural IRs
+- Employ tape delay and transient softeners
+
+**Reference Artists:** Weval, Christian Löffler, Kiasmos, Monolink
+
+---
+
+#### POST-TECHNO / NEO-IDM
+
+**BPM:** 95–125  
+**Character:** Textural, glitch-minimal, expressive  
+**Sound DNA:**
+
+- Combination of modular sequencing + live dynamics
+- Emphasis on amplitude modulation and non-grid patterns
+- Minimal reverb; wide stereo imaging
+
+**Typical Patches:**
+
+- **Bass:** Sine with subtle FM modulation
+- **Lead:** Random LFO-driven filter plucks
+- **Pads:** Generative movement (granular or wavetable)
+- **FX:** Unpredictable transient bursts or filtered noise
+
+**Production Tips:**
+
+- Use irregular step-sequencing
+- Record modulation manually
+- Process with saturation before reverb
+- Avoid 4/4 grid reliance
+
+**Reference Artists:** Rival Consoles, Max Cooper, Clark
+
+---
+
+#### EMOTIONAL ELECTRONICA / INDIE CINEMATIC
+
+**BPM:** 90–120  
+**Character:** Harmonic, dynamic, melodic narrative  
+**Sound DNA:**
+
+- Hybrid piano + synth layering
+- Complex automation of reverb depth
+- Emphasis on real-time performance capture
+
+**Typical Patches:**
+
+- **Piano Layer:** Sampled upright or felted
+- **Synth Layer:** Prophet-style saws with filter mod
+- **Pad:** Evolving granular textures
+- **FX:** Reverse swells, organic delays
+
+**Production Tips:**
+
+- Sidechain to subtle pulse, not full kick
+- Compress midrange lightly, preserve transients
+- Add 1–2 dB harmonic excitement @5–8 kHz
+
+**Reference Artists:** Weval, Rival Consoles, Jon Hopkins, Nils Frahm
+
+---
+
+#### AMBIENT TECHNO / PROGRESSIVE AMBIENT
+
+**BPM:** 100–125  
+**Character:** Hypnotic, meditative, spatial  
+**Sound DNA:**
+
+- Long-release pads and granular motion
+- Kick blends with sub, not dominant
+- Sparse but immersive arrangement
+
+**Typical Patches:**
+
+- **Bass:** Sub sine or filtered triangle, + soft distortion
+- **Pad:** Multi-layer evolving textures, 2–3 LFOs
+- **FX:** Random mod delay, 5–10s reverb tail
+- **Drone:** Constant tone with slow filter drift
+
+**Production Tips:**
+
+- Use automation curves instead of note variation
+- Layer pads in complementary EQ bands (low-mid/high-mid)
+- Use parallel reverbs for perceived depth
+
+**Reference Artists:** Rival Consoles, Recondite, Max Cooper, Luke Abbott
+
+---
+
+#### NEO-EMOTIVE MINIMAL / MELODIC MICROHOUSE
+
+**BPM:** 115–124  
+**Character:** Minimal, clean, harmonic microtexture  
+**Sound DNA:**
+
+- Clicks, plucks, and rhythmic texture as harmonic material
+- Highly dynamic yet restrained sound design
+
+**Typical Patches:**
+
+- **Bass:** Soft triangle with slight transient click
+- **Lead:** FM pluck, cutoff automation 2–5kHz
+- **Percussion:** Micro-samples with random panning
+- **FX:** Short reverbs and stereo delays (1/8 or 1/16)
+
+**Production Tips:**
+
+- Sidechain subtly, <3dB
+- Emphasize transient balance instead of EQ
+- Use dynamic EQ automation for motion
+
+**Reference Artists:** Weval, Pantha du Prince, Christian Löffler, Robag Wruhme
+
+---
+
 ## 📊 COMPARATIVE TABLE
 
-| GENRE | BPM | BASS STYLE | LEAD STYLE | MOOD |
-|--------|-----|-----------|-----------|------|
-| Deep House | 120-125 | Sub, rolling | Rhodes, warm | Groovy, soulful |
-| Tech House | 125-130 | Punchy, percussive | Stabs, minimal | Hypnotic |
-| Progressive House | 125-130 | Driving, melodic | Supersaw, emotional | Building, journey |
-| Organic House | 115-122 | Warm, moving | Ethnic, textured | Natural, ethnic |
-| Detroit Techno | 125-135 | Analog, driving | Strings, emotional | Futuristic, soulful |
-| Industrial Techno | 130-140 | Distorted, aggressive | Acid, industrial | Dark, aggressive |
-| Melodic Techno | 120-128 | Deep, hypnotic | Arpeggios, emotional | Deep, emotional |
-| Uplifting Trance | 136-142 | Rolling 1/8 | Supersaw, massive | Euphoric |
-| Psytrance | 138-148 | Rolling complex | Psychedelic, morphing | Hypnotic, intense |
-| Dubstep | 140 | Wobble, growl | Aggressive synth | Heavy, aggressive |
-| Liquid DnB | 170-180 | Reese, rolling | Pads, melodic | Smooth, emotional |
-| Hardstyle | 145-155 | Hard kick tail | Supersaw, emotional | Hard, euphoric |
-| Hardcore | 160-200+ | Gabber kick | Hoover, distorted | Fast, aggressive |
-| IDM | 80-160 | Glitchy, complex | Experimental | Intelligent, complex |
-| Glitch Hop | 85-115 | Wobble glitch | Stutter effects | Broken, bass-heavy |
-| Lo-fi Hip Hop | 70-95 | Vinyl, warm | Rhodes, lo-fi | Nostalgic, chill |
-| UK Garage | 130-138 | Sub, skippy | Vocal chops | Skippy, shuffled |
-| Future Garage | 128-142 | Deep, atmospheric | Textural, emotional | Dark, emotional |
-| Footwork | 155-170 | 808 tuned | Vocal chops rapid | Frenetic, dance |
-| Vaporwave | 60-90 | Slowed sample | Slowed sample | Surreal, nostalgic |
-| Breakbeat | 125-140 | Distorted, funky | Brass stabs | Energetic, funky |
-| Trap | 130-170 | 808 melodic | Bell, sparse | Heavy, minimal |
-| Future Bass | 130-150 | Bubbly wobble | Supersaw bright | Emotional, bright |
-| Synthwave | 80-120 | Slap/synth | Analog poly | Nostalgic, 80s |
-| Ambient | 60-90 | Drone, texture | Sparse, evolving | Meditative |
+| GENRE                 | BPM      | BASS STYLE               | LEAD STYLE              | MOOD                        |
+| --------------------- | -------- | ------------------------ | ----------------------- | --------------------------- |
+| Deep House            | 120-125  | Sub, rolling             | Rhodes, warm            | Groovy, soulful             |
+| Tech House            | 125-130  | Punchy, percussive       | Stabs, minimal          | Hypnotic                    |
+| Progressive House     | 125-130  | Driving, melodic         | Supersaw, emotional     | Building, journey           |
+| Organic House         | 115-122  | Warm, moving             | Ethnic, textured        | Natural, ethnic             |
+| Detroit Techno        | 125-135  | Analog, driving          | Strings, emotional      | Futuristic, soulful         |
+| Industrial Techno     | 130-140  | Distorted, aggressive    | Acid, industrial        | Dark, aggressive            |
+| Melodic Techno        | 120-128  | Deep, hypnotic           | Arpeggios, emotional    | Deep, emotional             |
+| Uplifting Trance      | 136-142  | Rolling 1/8              | Supersaw, massive       | Euphoric                    |
+| Psytrance             | 138-148  | Rolling complex          | Psychedelic, morphing   | Hypnotic, intense           |
+| Dubstep               | 140      | Wobble, growl            | Aggressive synth        | Heavy, aggressive           |
+| Liquid DnB            | 170-180  | Reese, rolling           | Pads, melodic           | Smooth, emotional           |
+| Hardstyle             | 145-155  | Hard kick tail           | Supersaw, emotional     | Hard, euphoric              |
+| Hardcore              | 160-200+ | Gabber kick              | Hoover, distorted       | Fast, aggressive            |
+| IDM                   | 80-160   | Glitchy, complex         | Experimental            | Intelligent, complex        |
+| Glitch Hop            | 85-115   | Wobble glitch            | Stutter effects         | Broken, bass-heavy          |
+| Lo-fi Hip Hop         | 70-95    | Vinyl, warm              | Rhodes, lo-fi           | Nostalgic, chill            |
+| UK Garage             | 130-138  | Sub, skippy              | Vocal chops             | Skippy, shuffled            |
+| Future Garage         | 128-142  | Deep, atmospheric        | Textural, emotional     | Dark, emotional             |
+| Footwork              | 155-170  | 808 tuned                | Vocal chops rapid       | Frenetic, dance             |
+| Vaporwave             | 60-90    | Slowed sample            | Slowed sample           | Surreal, nostalgic          |
+| Breakbeat             | 125-140  | Distorted, funky         | Brass stabs             | Energetic, funky            |
+| Trap                  | 130-170  | 808 melodic              | Bell, sparse            | Heavy, minimal              |
+| Future Bass           | 130-150  | Bubbly wobble            | Supersaw bright         | Emotional, bright           |
+| Synthwave             | 80-120   | Slap/synth               | Analog poly             | Nostalgic, 80s              |
+| Ambient               | 60-90    | Drone, texture           | Sparse, evolving        | Meditative                  |
+| Cinematic Techno      | 110–125  | Warm analog sub          | Soft pluck / hybrid pad | Atmospheric, emotional      |
+| Organic Techno        | 100–115  | Warm sine / triangle     | Acoustic blend          | Human, textured             |
+| Post-Techno           | 95–125   | Subtle FM sine           | Glitch pluck            | Experimental, introspective |
+| Emotional Electronica | 90–120   | Gentle analog / acoustic | Piano-synth hybrid      | Cinematic, melancholic      |
+| Ambient Techno        | 100–125  | Deep sub                 | Drone/pad               | Hypnotic, meditative        |
+| Melodic Microhouse    | 115–124  | Soft pluck bass          | FM or micro-pluck       | Minimal, elegant            |
 
 ---
 
@@ -1456,6 +1627,13 @@ WHY: Creates energy and funk groove
 - Zebra2 (U-he): Modular synthesis
 - Falcon (UVI): Hybrid scripting
 - Granulator plugins
+
+**CINEMATIC / ORGANIC / POST-TECHNO**
+- Pigments (Arturia): Hybrid analog-granular engine
+- Omnisphere: For cinematic texture layering
+- Diva: Analog warmth and filter drive
+- Reaktor Blocks: Modular generative experiments
+- VCV Rack / Modular integration
 
 ---
 
@@ -1683,6 +1861,28 @@ Difficulty: Intermediate
 - **Melodies**: Eastern scales, complex layering
 - **Use**: Goa parties, spiritual gatherings
 - **Reference**: Hallucinogen, Juno Reactor, Astral Projection
+
+### Emotive / Cinematic Electronica Variations
+
+#### Berlin Cinematic
+- **BPM**: 110–125
+- **Character**: Layered, emotional, modern
+- **Bass**: Warm analog sub, often sidechained
+- **Leads**: Atmospheric plucks, soft vocal textures
+- **Reference**: Moderat, Apparat, Jon Hopkins
+
+#### Organic Techno
+- **BPM**: 100–115
+- **Character**: Textured, natural, analog-acoustic hybrid
+- **Percussion**: Live-feel, shakers, low percussive instruments
+- **Reference**: Weval, Christian Löffler, Kiasmos
+
+#### Post-Techno
+- **BPM**: 95–125
+- **Character**: Minimal, experimental, emotional
+- **Structure**: Asymmetrical patterns, feedback-based rhythm
+- **Reference**: Rival Consoles, Max Cooper, Clark
+
 
 ---
 
